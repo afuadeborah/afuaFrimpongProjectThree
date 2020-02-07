@@ -70,4 +70,27 @@ To calculate the result:
 
 
 nav into icons?
+//Question Array
+    //Each question has to randomize the order of the answers or else user will be able to guess their result before the end of the quiz
+    Question 1
+        a. VaporWave
+        b. Goth
+        c. RetroWave
+    Question 2
+        a. Goth
+        b.VaporWave
+        c.RetroWave
+    Question 3
+        a.VaporWave
+        b.RetroWave
+        c. Goth
+    Question 4
+        a.RetroWave
+        b. Goth
+        c.VaporWave
+    Question 5
+        a.Goth
+        b.VaporWave
+        c.RetroWave
+    
 
