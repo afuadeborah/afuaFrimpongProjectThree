@@ -1,1 +1,14 @@
-console.log('hey hey');
+$(document).ready(function(){
+
+
+
+
+
+
+
+
+
+
+
+});
+// Document Ready Scope
