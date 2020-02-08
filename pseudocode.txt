@@ -13,9 +13,14 @@ All 3 options for each question are an contained in a clickable ul li which is t
     let $('.li') = $aestheticOption;
 
 The score of each aesthetic will be stored as a variable to be updated as each option is selected. This should go in an array/object to change into integers?
-    let gothScore = 0;
+    let grungeScore = 0;
     let vaporScore = 0;
-    let retroScore = 0;
+    let pastelScore = 0;
+
+
+    let grunge = $('.grungeSelection');
+    let vapor = $('.vaporSelection');
+    let pastel = $('.pastelSelection');
 
 
 Using a nested conditional, each selection will trigger a boolean which will be true or false.
@@ -24,18 +29,19 @@ ex:
 
 Put this in a for in loop so that for each question it tracks the score.
 
-   let score = $aestheticOption.on('click', function(e){
-       e.preventDefault()
-        if (gothAnswer === true) {
+    let score = $aestheticOption.on('click', function(e){
+    e.preventDefault()
 
-            gothScore = gothScore + 1;
+        if (grungeAnswer === true) {
+
+            grungeScore = grungeScore + 1;
 
         } else if (vaporAnswer === true) {
 
             vaporScore = vaporScore + 1;
         } else {
             
-            retroScore = retroScore + 1;
+            pastelScore = pastelScore + 1;
         }
 }
 
@@ -43,18 +49,18 @@ Each score will be pushed into an array that will be looped through and the scor
 
 
 To calculate the result:
-    if(gothScore > vaporScore && gothScore > retroScore){
+    if(grungeScore > vaporScore && grungeScore > pastelScore){
 
-        console.log("${userName}, You are into the Goth Aesthetic.”);
+        console.log("${userName}, You are into the Grunge Aesthetic.”);
         // Dynamic HTML here?
 
 
-    } else if (vaporScore > gothScore && vaporScore > retroScore){
+    } else if (vaporScore > grungeScore && vaporScore > pastelScore){
 
         console.log(`${userName}, You are into the VaporWave aesthetic`);
     } else {
 
-        console.log(`${userName}, You are into Retro Aesthetic`)
+        console.log(`${userName}, You are into Pastel Aesthetic`)
     }
 
 
@@ -62,7 +68,7 @@ To calculate the result:
 
 
 // Put in userWaveName in result and display 2 images template literal:
-`<h2> ${userWaveName}, you are the ${}Wave aesthetic!</h2>`
+`<h2> ${userWaveName}, you are the ${} aesthetic!</h2>`
 
 });
 //Doc Ready Scope
@@ -72,25 +78,31 @@ To calculate the result:
 nav into icons?
 //Question Array
     //Each question has to randomize the order of the answers or else user will be able to guess their result before the end of the quiz
-    Question 1
-        a. VaporWave
-        b. Goth
-        c. RetroWave
+
+const quizQuestions = [
+    {
+    question1: 'What is question1?',
+    answers1: {
+        a: VaporWave
+        b: Grunge
+        c: Pastel
+    }
+    },
     Question 2
-        a. Goth
-        b.VaporWave
-        c.RetroWave
+        a. Grunge
+        b. VaporWave
+        c. Pastel
     Question 3
-        a.VaporWave
-        b.RetroWave
-        c. Goth
+        a. VaporWave
+        b. Pastel
+        c. Grunge
     Question 4
-        a.RetroWave
-        b. Goth
-        c.VaporWave
+        a. Pastel
+        b. Grunge
+        c. VaporWave
     Question 5
-        a.Goth
-        b.VaporWave
-        c.RetroWave
-    
+        a. Grunge
+        b. VaporWave
+        c. Pastel
+    ]
 
