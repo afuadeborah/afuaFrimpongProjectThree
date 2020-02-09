@@ -1,5 +1,6 @@
 // Global Variable Declaration
 const beginButton = $('.begin');
+const startQuizquestion = $('.question1');
 
 
 $(document).ready(function(){
@@ -10,20 +11,20 @@ $(document).ready(function(){
         let waveName = $('input').val();
         
         if (waveName === ''){
-                alert('Please fill in a ~ wavename ~ to start the quiz.');
-                
+            alert('Please fill in a ~ wavename ~ to start the quiz.');
+
         } else {
             $('.letsGo').html( `<p>let's r i d e, ${waveName}.</p>`);
             console.log(waveName);
         }
             $('input').val('');
+            nextQuestion();
     });
 
 // DONE
 // On click of the 'Let's Begin' button, we want the quiz to start and the first question to appear
 
 
-    // function beginWave(){};
     
     // function nextQuestion(){};
     

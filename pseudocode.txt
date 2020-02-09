@@ -101,11 +101,14 @@ const quizQuestions = [
 
     {
     question2: 'What is question2?',
-    answer2: {
-        a: Grunge
-        b: VaporWave
-        c: Pastel
-        }
+    answer2: [
+        {a: Grunge, 
+        grungeSelection: true}
+        {b: VaporWave, 
+        vaporSelection: true}
+        {c: Pastel, 
+        pastelSelection = true}
+        ]
     },
 
     {

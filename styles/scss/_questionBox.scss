@@ -2,8 +2,25 @@
 // question
 // question1-5
 
+.questionsContainer {
+    margin-top: 50px;
+
+}
+
 .question {
     border: 6px solid white;
     height: 90vh;
     margin-bottom: 50px;
+}
+
+.selectionContainer {
+    display: flex;
+
+}
+
+.selection {
+    height: 400px;
+    width: calc(33% - 10px);
+    margin: 0 10px;
+    border: 3px solid gold;
 }
