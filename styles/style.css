@@ -180,7 +180,15 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 header {
-  height: 100vh;
+  border: 6px solid white;
+  height: 90vh;
+  margin-bottom: 50px;
+}
+
+.question {
+  border: 6px solid white;
+  height: 90vh;
+  margin-bottom: 50px;
 }
 
 span,
