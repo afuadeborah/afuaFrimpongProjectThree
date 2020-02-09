@@ -9,8 +9,9 @@
 
 .question {
     border: 6px solid white;
-    height: 90vh;
+    height: 70vh;
     margin-bottom: 50px;
+    display: none;
 }
 
 .selectionContainer {
@@ -19,8 +20,24 @@
 }
 
 .selection {
-    height: 400px;
+    color: black;
+    font-size: 4rem;
+    height: 80px;
     width: calc(33% - 10px);
     margin: 0 10px;
+    background-color: gold;
     border: 3px solid gold;
+
+    &:hover {
+        background-color: black;
+        color: white;
+        cursor: pointer;
+    }
+}
+// make this a grid
+
+#writeQuestion {
+    font-size: 3rem;
+    font-weight: bold;
+    color: green;
 }

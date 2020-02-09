@@ -92,7 +92,7 @@ nav into icons?
 const quizQuestions = [
     {
     question1: 'What is question1?',
-    answers1: {
+    options1: {
         a: VaporWave
         b: Grunge
         c: Pastel
@@ -141,8 +141,47 @@ const quizQuestions = [
 
 ]
 
+To get to each question
+console.log(quizQuestions[i]);
+    quizQuestions.forEach(function(option){
+        console.log(`${option.question}`);
+    })
+
 maybe make 3 arrays for each aesthetic and push answers on click into their respective array and then loop through each array for size
 
 or
 
 loop through this array above and on click for each question push each answer into an empty array. at the end loop through each array and the biggest score (num1 num 2 example) will be logged into the result div using .html() method
+
+
+        <div class="question question2">
+            <ul class="selectionContainer">
+                <li class="selection grungeSelection"></li>
+                <li class="selection vaporSelection"></li>
+                <li class="selection pastelSelection"></li>
+            </ul>
+        </div>
+
+        <div class="question question3">
+            <ul class="selectionContainer">
+                <li class="selection vaporSelection"></li>
+                <li class="selection pastelSelection"></li>
+                <li class="selection grungeSelection"></li>
+            </ul>
+        </div>
+
+        <div class="question question4">
+            <ul class="selectionContainer">
+                <li class="selection pastelSelection"></li>
+                <li class="selection grungeSelection"></li>
+                <li class="selection vaporSelection"></li>
+            </ul>
+        </div>
+
+        <div class="question question5">
+            <ul class="selectionContainer">
+                <li class="selection grungeSelection"></li>
+                <li class="selection vaporSelection"></li>
+                <li class="selection pastelSelection"></li>
+            </ul>
+        </div>

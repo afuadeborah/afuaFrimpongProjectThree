@@ -182,7 +182,17 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 header {
   border: 6px solid white;
   height: 90vh;
-  margin-bottom: 50px;
+  margin: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
 }
 
 .questionsContainer {
@@ -191,8 +201,9 @@ header {
 
 .question {
   border: 6px solid white;
-  height: 90vh;
+  height: 70vh;
   margin-bottom: 50px;
+  display: none;
 }
 
 .selectionContainer {
@@ -202,10 +213,25 @@ header {
 }
 
 .selection {
-  height: 400px;
+  color: black;
+  font-size: 4rem;
+  height: 80px;
   width: calc(33% - 10px);
   margin: 0 10px;
+  background-color: gold;
   border: 3px solid gold;
+}
+
+.selection:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+#writeQuestion {
+  font-size: 3rem;
+  font-weight: bold;
+  color: green;
 }
 
 span,

@@ -1,14 +1,17 @@
 // Global Variable Declaration
 const beginButton = $('.begin');
 const startQuizquestion = $('.question1');
-
+const aestheticQuestion = $('h2');
+const aestheticOptionsContainer = $('.selectionContainer');
 
 $(document).ready(function(){
-// We want the user to input a username which is stored and to be used on the result page
-
+    
+// Username Creation and Beginning of Quiz
     beginButton.on('click', function beginWave(){
         
-        let waveName = $('input').val();
+        const userName = $('input');
+        // make this a local variable since I only need it here
+        let waveName = userName.val();
         
         if (waveName === ''){
             alert('Please fill in a ~ wavename ~ to start the quiz.');
@@ -17,18 +20,38 @@ $(document).ready(function(){
             $('.letsGo').html( `<p>let's r i d e, ${waveName}.</p>`);
             console.log(waveName);
         }
-            $('input').val('');
-            nextQuestion();
+
+        userName.val('');
+        $('.question').show();
+    
+
+
+
+
+
+
+
+
     });
-
-// DONE
-// On click of the 'Let's Begin' button, we want the quiz to start and the first question to appear
+    // DONE
 
 
-    
-    // function nextQuestion(){};
-    
-    // function clickSelection(){};
+
+// Display the first question from array, show it, allow user to click on an option and store the answer
+
+    aestheticOptionsContainer.on('click', 'li', function() {
+        console.log('I been clicked');
+
+        
+
+
+
+
+
+
+
+
+    });
 
 
 
@@ -43,3 +66,50 @@ $(document).ready(function(){
 });
 // Document Ready Scope
 
+// Question Array
+const quizQuestions = [
+    {
+        question: 'What is question1?',
+        options: [
+            'VaporWave',
+            'Grunge',
+            'Pastel'
+            ]
+    },
+
+    {
+        question: 'What is question2?',
+        options: [
+            'VaporWave',
+            'Grunge',
+            'Pastel' 
+            ]
+    },
+
+    {
+        question: 'What is question1?',
+        options: [
+            'VaporWave',
+            'Grunge',
+            'Pastel'
+            ]
+    },
+
+    {
+        question: 'What is question1?',
+        options: [
+            'VaporWave',
+            'Grunge',
+            'Pastel'
+            ]
+    },
+
+    {
+        question: 'What is question1?',
+        options: [
+            'VaporWave',
+            'Grunge',
+            'Pastel'
+            ]
+    },
+]
