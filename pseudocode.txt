@@ -83,7 +83,7 @@ for (let selection in selectionContainer)
 });
 //Doc Ready Scope
 
-
+console.log(quizQuestions[0].question);
 
 nav into icons?
 //Question Array

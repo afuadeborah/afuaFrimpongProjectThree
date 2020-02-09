@@ -1,8 +1,9 @@
 // Global Variable Declaration
 const beginButton = $('.begin');
-const startQuizquestion = $('.question1');
-const aestheticQuestion = $('h2');
-const aestheticOptionsContainer = $('.selectionContainer');
+
+
+
+
 
 $(document).ready(function(){
     
@@ -22,36 +23,28 @@ $(document).ready(function(){
         }
 
         userName.val('');
-        $('.question').show();
+        $('.question').show()
+        $('question').slideDown('slow');
+        $('li').show();
     
-
-
-
-
-
-
-
-
     });
     // DONE
 
-
-
-// Display the first question from array, show it, allow user to click on an option and store the answer
-
-    aestheticOptionsContainer.on('click', 'li', function() {
+    
+    const selection = $("input[type='radio']");
+    
+    selection.on('click', function() {
+        const vapor = $('input[value="vapor"]');
+        
         console.log('I been clicked');
-
+        // use this keyword to allow user to click any option then use if else statement to score
         
 
-
-
-
-
-
-
-
-    });
+        
+            
+        
+            
+        });
 
 
 
@@ -66,50 +59,4 @@ $(document).ready(function(){
 });
 // Document Ready Scope
 
-// Question Array
-const quizQuestions = [
-    {
-        question: 'What is question1?',
-        options: [
-            'VaporWave',
-            'Grunge',
-            'Pastel'
-            ]
-    },
 
-    {
-        question: 'What is question2?',
-        options: [
-            'VaporWave',
-            'Grunge',
-            'Pastel' 
-            ]
-    },
-
-    {
-        question: 'What is question1?',
-        options: [
-            'VaporWave',
-            'Grunge',
-            'Pastel'
-            ]
-    },
-
-    {
-        question: 'What is question1?',
-        options: [
-            'VaporWave',
-            'Grunge',
-            'Pastel'
-            ]
-    },
-
-    {
-        question: 'What is question1?',
-        options: [
-            'VaporWave',
-            'Grunge',
-            'Pastel'
-            ]
-    },
-]
