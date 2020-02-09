@@ -10,7 +10,12 @@ Upon beginning quiz user will be prompted to enter a username into a text input.
     const userWaveName = $(.textInput).val('');
 
 All 3 options for each question are an contained in a clickable ul li which is triggered by an 'click' event. Each aesthetic is stored in a variable. 
-    let $('.li') = $aestheticOption;
+    const aestheticQuestion = $('.question);
+    const grunge = $('.grungeSelection');
+    const vapor = $('.vaporSelection');
+    const pastel = $('.pastelSelection');
+
+    //GLOBAL VARIABLES
 
 The score of each aesthetic will be stored as a variable to be updated as each option is selected. This should go in an array/object to change into integers?
     let grungeScore = 0;
@@ -18,9 +23,6 @@ The score of each aesthetic will be stored as a variable to be updated as each o
     let pastelScore = 0;
 
 
-    let grunge = $('.grungeSelection');
-    let vapor = $('.vaporSelection');
-    let pastel = $('.pastelSelection');
 
 
 Using a nested conditional, each selection will trigger a boolean which will be true or false.
@@ -28,15 +30,17 @@ Each answer will be pushed into an array that will be used to tabulate a score a
 ex:
 
 Put this in a for in loop so that for each question it tracks the score.
+this refers to any li so I need to refer to the li before using it
+    
+let score = aestheticQuestion.on('click', function(e){
+e.preventDefault()
 
-    let score = $aestheticOption.on('click', function(e){
-    e.preventDefault()
-
-        if (grungeAnswer === true) {
+        if (grungeSelection === true) {
 
             grungeScore = grungeScore + 1;
+            e.push()
 
-        } else if (vaporAnswer === true) {
+        } else if (vaporSelection === true) {
 
             vaporScore = vaporScore + 1;
         } else {
@@ -48,7 +52,12 @@ Put this in a for in loop so that for each question it tracks the score.
 Each score will be pushed into an array that will be looped through and the score will be tabulated from this array using another conditional
 
 
+
+
 To calculate the result:
+Loop through array
+use .length
+for (let selection in selectionContainer)
     if(grungeScore > vaporScore && grungeScore > pastelScore){
 
         console.log("${userName}, You are into the Grunge Aesthetic.”);
@@ -58,6 +67,7 @@ To calculate the result:
     } else if (vaporScore > grungeScore && vaporScore > pastelScore){
 
         console.log(`${userName}, You are into the VaporWave aesthetic`);
+
     } else {
 
         console.log(`${userName}, You are into Pastel Aesthetic`)
@@ -86,23 +96,50 @@ const quizQuestions = [
         a: VaporWave
         b: Grunge
         c: Pastel
-    }
+        }
     },
-    Question 2
-        a. Grunge
-        b. VaporWave
-        c. Pastel
-    Question 3
-        a. VaporWave
-        b. Pastel
-        c. Grunge
-    Question 4
-        a. Pastel
-        b. Grunge
-        c. VaporWave
-    Question 5
-        a. Grunge
-        b. VaporWave
-        c. Pastel
-    ]
 
+    {
+    question2: 'What is question2?',
+    answer2: {
+        a: Grunge
+        b: VaporWave
+        c: Pastel
+        }
+    },
+
+    {
+    question3: 'What is question3?',
+  
+    answer3: {
+        a: VaporWave
+        b: Pastel
+        c: Grunge
+        }
+    },
+    
+    {
+    question4: 'What is question4?',
+        answer4: {
+        a: Pastel
+        b: Grunge
+        c: VaporWave
+        }
+    },
+
+    {
+    question5: 'What is question5?',
+    answer5: {
+        a: Grunge
+        b: VaporWave
+        c: Pastel
+        }
+    }
+
+]
+
+maybe make 3 arrays for each aesthetic and push answers on click into their respective array and then loop through each array for size
+
+or
+
+loop through this array above and on click for each question push each answer into an empty array. at the end loop through each array and the biggest score (num1 num 2 example) will be logged into the result div using .html() method

@@ -179,6 +179,10 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   overflow: hidden;
 }
 
+header {
+  height: 100vh;
+}
+
 span,
 ul,
 li,
