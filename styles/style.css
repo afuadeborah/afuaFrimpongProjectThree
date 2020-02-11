@@ -213,16 +213,17 @@ header {
 }
 
 .selection {
-  color: black;
-  font-size: 4rem;
+  width: 33%;
+}
+
+.choice {
   height: 80px;
   width: calc(33% - 10px);
   margin: 0 10px;
-  background-color: gold;
-  border: 3px solid gold;
+  border: 2px solid gold;
 }
 
-.selection:hover {
+.choice:hover {
   background-color: black;
   color: white;
   cursor: pointer;

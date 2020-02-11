@@ -2,15 +2,13 @@
 const beginButton = $('.begin');
 
 
-
-
-
 $(document).ready(function(){
     
 // Username Creation and Beginning of Quiz
-    beginButton.on('click', function beginWave(){
+    beginButton.on('click', function(){
         
-        const userName = $('input');
+        const userName = $('#waveName');
+        
         // make this a local variable since I only need it here
         let waveName = userName.val();
         
@@ -24,38 +22,37 @@ $(document).ready(function(){
 
         userName.val('');
         $('.question').show()
-        $('question').slideDown('slow');
         $('li').show();
     
     });
     // DONE
 
+    // Show Question
+
+    const resultArray = [];
+    const selection = $('input[type=radio]').val();
+    // Find a way to access this value 
+    const vapor = $('input[value=vapor]');
+    const grunge = $('input[value=grunge]');
+    const pastel = $('input[value=pastel]');
+
+    // Click Answer
+    selection.on('click', function(){
+        console.log('clicked');
+    });
+
+
+
+
+
+
+
+
+
+
+
+
     
-    const selection = $("input[type='radio']");
-    
-    selection.on('click', function() {
-        const vapor = $('input[value="vapor"]');
-        
-        console.log('I been clicked');
-        // use this keyword to allow user to click any option then use if else statement to score
-        
-
-        
-            
-        
-            
-        });
-
-
-
-
-
-
-
-
-
-
-
 });
 // Document Ready Scope
 
