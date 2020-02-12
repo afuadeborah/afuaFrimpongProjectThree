@@ -63,7 +63,7 @@ $(document).ready(function(){
     // DONE
 
 
-// Print all the questions to the page
+// Print all the questions to the page, start quiz
     function printQuestion() {
         quizQuestions.forEach(function (currentItem) {
 
@@ -85,8 +85,8 @@ $(document).ready(function(){
             }
         });
     };
-
     printQuestion();
+    
 
 
 //Grab the value of the question and do something
@@ -110,10 +110,38 @@ $(document).ready(function(){
         });
     };
 
-    grabAestheticValue();
+    
     // Proceed to the next question in the array, if we hit the last question go to results, if not display the next question
-    //Bounce and alert if there wasn't an option checked 
-    $('.next').on()
+    //Bounce an alert if there wasn't an option checked 
+    
+    const nextButton = $('.next');
+    // Next Question in Array
+    nextButton.on('click', function(){
+        grabAestheticValue();
+        currentQuestion++;
+        // increment the main array index by 1
+        // we can do this bc quizQuestions is in the global scope so we can grab it anywhere
+
+        // in order to move to the next question, we have to make sure we're still within the array.length
+        if (currentQuestion < quizQuestions.length){
+            // keep going
+            printQuestion();
+            grabAestheticValue();
+        } 
+        if (currentQuestion == quizQuestions.length - 1){
+            // on the last question we want that click to trigger the result div
+            nextButton.on('click', function(){
+                $('.result').show();
+            // tally up the aesthetic array here as well
+            // --
+                const resultHtml = `<h3>Your result is</h3>`;
+                $('.result').html(resultHtml);
+                console.log(resultHtml);
+            });
+        };
+
+
+    });
 
 
 
@@ -131,5 +159,7 @@ $(document).ready(function(){
     
 });
 // Document Ready Scope
+
+
 
 
