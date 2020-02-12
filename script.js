@@ -1,7 +1,7 @@
 // Main Array
 const quizQuestions = [
     {
-        question: "Pick a shoe",
+        question: "Pick a shoe.",
         choices: ["Steve", "kevin", "peter"],
         categories: ["vapor", "grunge", "pastel"]
     },
@@ -32,10 +32,59 @@ const quizQuestions = [
 // Global Variable Declaration
 let currentQuestion = 0;
 const aestheticScore = [];
+const mainArray = quizQuestions[currentQuestion];
+
+
+
+// Print all the questions to the page, start quiz
+    function printQuestion() {
+        const askQuestion = quizQuestions[currentQuestion].question;
+            console.log(askQuestion);
+
+            $('h2').html('Question ' + parseInt(currentQuestion + 1) + " : " + askQuestion);
+            
+
+            // the selections that the user will click on
+        const options = quizQuestions[currentQuestion].choices;
+        const wave = quizQuestions[currentQuestion].categories;
+        console.log(options);
+        console.log(wave);
+
+            let formHtml = '';
+
+
+            // print the selections to each radio button
+            for (let i = 0; i < options.length; i++) {
+                formHtml += `<div class='check'><input type='radio' name='option' value='${wave[i]}'>${options[i]}</input></div>`;
+                $('.questionBox').html(formHtml);
+            }
+
+    };
+    // printQuestion();
+
+//Grab the value of the question and do something
+    function grabAestheticValue() {
+        $('input[name=option]').on('click', function() {
+            const selectedValue = $(this).val();
+            console.log(selectedValue);
+            if (selectedValue === 'grunge') {
+                aestheticScore.push(selectedValue);
+
+            } else if (selectedValue === 'vapor') {
+                aestheticScore.push(selectedValue);
+
+            } else {
+                aestheticScore.push(selectedValue);
+                // pastel value
+            }
+            console.log(aestheticScore);
+            console.log('clicked');
+
+            // Prevent more than one answer being clicked by triggering next button event
+        });
+    };
 
 $(document).ready(function(){
-
-
 
 // const beginButton = $('#startWave');
 // console.log(beginButton);
@@ -58,64 +107,19 @@ $(document).ready(function(){
         }
 
         $('.question').show()
-        // userName.val('');
+        userName.val('');
     });
     // DONE
 
-
-// Print all the questions to the page, start quiz
-    function printQuestion() {
-        quizQuestions.forEach(function (currentItem) {
-
-            const askQuestion = currentItem.question;
-
-            $('h2').html('Question ' + parseInt(currentQuestion + 1) + " : " + askQuestion);
-
-            // the selections that the user will click on
-            const options = currentItem.choices;
-            const wave = currentItem.categories;
-
-            let formHtml = '';
-
-
-            // print the selections to each radio button
-            for (let i = 0; i < options.length; i++) {
-                formHtml += `<div class='check'><input type='radio' name='option' value='${wave[i]}'>${options[i]}</input></div>`;
-                $('.questionBox').html(formHtml);
-            }
-        });
-    };
+// Call question print 
     printQuestion();
-    
-
-
-//Grab the value of the question and do something
-    function grabAestheticValue() {
-        $('input[type=radio]').on('click', function () {
-            const selectedValue = $(this).val();
-            console.log(selectedValue);
-            if (selectedValue === 'grunge') {
-                aestheticScore.push(selectedValue);
-
-            } else if (selectedValue === 'vapor') {
-                aestheticScore.push(selectedValue);
-
-            } else {
-                aestheticScore.push(selectedValue);
-                // pastel value
-            }
-            console.log(aestheticScore);
-
-            // Prevent more than one answer being clicked by triggering next button event
-        });
-    };
 
     
-    // Proceed to the next question in the array, if we hit the last question go to results, if not display the next question
-    //Bounce an alert if there wasn't an option checked 
+// Proceed to the next question in the array, if we hit the last question go to results, if not display the next question
+//Bounce an alert if there wasn't an option checked 
     
     const nextButton = $('.next');
-    // Next Question in Array
+// Next Question in Array
     nextButton.on('click', function(){
         grabAestheticValue();
         currentQuestion++;
@@ -126,12 +130,14 @@ $(document).ready(function(){
         if (currentQuestion < quizQuestions.length){
             // keep going
             printQuestion();
-            grabAestheticValue();
+            // grabAestheticValue();
         } 
         if (currentQuestion == quizQuestions.length - 1){
             // on the last question we want that click to trigger the result div
             nextButton.on('click', function(){
+                $('.question').hide();
                 $('.result').show();
+
             // tally up the aesthetic array here as well
             // --
                 const resultHtml = `<h3>Your result is</h3>`;
