@@ -32,14 +32,14 @@ const quizQuestions = [
 // Global Variable Declaration
 let currentQuestion = 0;
 const aestheticScore = [];
-const mainArray = quizQuestions[currentQuestion];
+
 
 
 
 // Print all the questions to the page, start quiz
     function printQuestion() {
         const askQuestion = quizQuestions[currentQuestion].question;
-            console.log(askQuestion);
+            // console.log(askQuestion);
 
             $('h2').html('Question ' + parseInt(currentQuestion + 1) + " : " + askQuestion);
             
@@ -47,8 +47,8 @@ const mainArray = quizQuestions[currentQuestion];
             // the selections that the user will click on
         const options = quizQuestions[currentQuestion].choices;
         const wave = quizQuestions[currentQuestion].categories;
-        console.log(options);
-        console.log(wave);
+        // console.log(options);
+        // console.log(wave);
 
             let formHtml = '';
 
@@ -64,9 +64,10 @@ const mainArray = quizQuestions[currentQuestion];
 
 //Grab the value of the question and do something
     function grabAestheticValue() {
-        $('input[name=option]').on('click', function() {
-            const selectedValue = $(this).val();
+        // $('input[name=option]').on('click', function() {
+            const selectedValue = $('input[type=radio]:checked').val();
             console.log(selectedValue);
+
             if (selectedValue === 'grunge') {
                 aestheticScore.push(selectedValue);
 
@@ -81,7 +82,7 @@ const mainArray = quizQuestions[currentQuestion];
             console.log('clicked');
 
             // Prevent more than one answer being clicked by triggering next button event
-        });
+        // });
     };
 
 $(document).ready(function(){
