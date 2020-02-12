@@ -1,44 +1,10 @@
-// questions-container
-// question
-// question1-5
-
-.questionsContainer {
-    margin-top: 50px;
-
-}
-
-.question {
-    border: 6px solid white;
-    height: 70vh;
-    margin-bottom: 50px;
+.question{
     display: none;
 }
 
-.selectionContainer {
-    display: flex;
-}
 
-.selection {
-    width: 33%;
-}
 
-.choice {
-    height: 80px;
-    width: calc(33% - 10px);
-    margin: 0 10px;
-    // background-color: gold;
-    border: 2px solid gold;
 
-    &:hover {
-        background-color: black;
-        color: white;
-        cursor: pointer;
-    }
-}
-// make this a grid
 
-#writeQuestion {
-    font-size: 3rem;
-    font-weight: bold;
-    color: green;
-}
+
+

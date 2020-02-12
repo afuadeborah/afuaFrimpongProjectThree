@@ -14,116 +14,40 @@
     <title>Project 3: Ride the Wave</title>
 </head>
 
-<header>
     <!-- grid this header, flex the children? -->
+<header>
     <div class="welcome">
         <h1>Ride the Wave</h1>
-        <span>Discover your a e s t h e t i c.</span>
-        <form action="#" class="createUser">
-            <input type="text" name="userWaveName" 
-            id="waveName" placeholder="e n t e r your wavename">
-            <button class="begin">Let's Begin!</button>
+        <span>What's your a e s t h e t i c?</span>
+        <form action="">
+            <input type="text" name="" id="waveName" placeholder="e n t e r your name here">
+            <input type="submit" id="startWave" value="Let's Go">
         </form>
-        <!-- form is more semantic? -->
         <div class="letsGo">
-
+            <!-- add here -->
         </div>
-        <!-- go across the screen above the first question -->
-
     </div>
 </header>
-<!-- on click scroll down/display first question -->
-
+    
 <body>
-    <main>
-    <section class="questionsContainer wrapper">
-        <div class="question" id= "question1">
-            <h2>Question 1</h2>
-            <form action="">
-                <input type="radio" name="quest1" value="vapor"> Answer 1</input>
-                <input type="radio" name="quest1" value="grunge">Answer 2 MAYBE PUT IMAGES HERE</input>
-                <input type="radio" name="quest1" value="pastel">Answer 3</input>
-            </form>
-        </div>
-        <!-- manually randomize the values and push them into an empty array -->
+    <div class="question">
+        <h2></h2>
+        <form action="" class="questionBox">
 
-        <div class="question" id= "question2">
-            <h2> Write question here</h2>
-            <form action="">
-                <input type="radio" name="quest2" value="grunge"> Answer 1</input>
-                <input type="radio" name="quest2" value="vapor"></input>
-                <input type="radio" name="quest2" value="pastel"></input>
-            </form>
-        </div>
 
-        <div class="question" id= "question3">
-            <h2> Write question here</h2>
-            <form action="">
-                <input type="radio" name="quest3" value="vapor"> Answer 1</input>
-                <input type="radio" name="quest3" value="pastel"></input>
-                <input type="radio" name="quest3" value="grunge"></input>
-            </form>
-        </div>
+        </form>
 
-        <div class="question" id= "question4">
-            <h2> Write question here</h2>
-            <form action="">
-                <input type="radio" name="quest4" value="pastel"> Answer 1</input>
-                <input type="radio" name="quest4" value="grunge"></input>
-                <input type="radio" name="quest4" value="vapor"></input>
-            </form>
-        </div>
+        <button class="next">Next</button>
+    </div>
 
-        <div class="question" id="question5">
-            <h2> Write question here</h2>
-            <form action="">
-                <input type="radio" name="quest5" value="grunge"> Answer 1</input>
-                <input type="radio" name="quest5" value="vapor"></input>
-                <input type="radio" name="quest5" value="grunge"></input>
-            </form>
-        </div>
-    </section>
 
-    <section class="result wrapper">
-        <div class="resultContainer">
-            <h3>
-                <!-- DYNAMIC -->
-            </h3>
-
-            <img src="" alt=""> <!--(dynamic)-->
-            <img src="" alt=""><!--(dynamic)-->
-        </div>
-        <!-- use this keyword -->
-        <button class="restart">Ride the Wave Again</button>
-    </section>
-    <!-- this section will most likely be dynamic and set up using jQ -->
-<!-- change: 
-    background-color
-    color
-    border -->
-    </main>
-
+    
     <footer class="wrapper">
         <p class="bottom">Copyright Afua Deborah 2020</p>
     </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
     <!-- JQuery here -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="./script.js"></script>
-    
 </body>
 </html>

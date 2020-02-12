@@ -10,33 +10,24 @@
 // color.halipixel.com
 
 // Strip Club
-span,
-ul,
-li,
-a,
-h1,
-h2,
-p,
-button {
-    margin: 0;
-    padding: 0;
-}
+// span,
+// ul,
+// li,
+// a,
+// h1,
+// h2,
+// p,
+// button {
+//     margin: 0;
+//     padding: 0;
+// }
 
-ul,
-li,
-a {
-    list-style: none;
-    text-decoration: none;
-}
 
-html {
-    font-size: 62.5%;
-}
 
-body {
-    background-color: #171717;
-    color: white;
-}
+// html {
+//     font-size: 62.5%;
+// }
+
 
 img {
     width: 100%;
@@ -47,4 +38,15 @@ img {
     max-width: 1100px;
     margin: 0 auto;
     width: 90%;
+}
+
+body {
+    background-color: black;
+    color: white;
+    }
+
+
+header,
+.question {
+    height: 100vh;
 }

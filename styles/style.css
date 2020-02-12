@@ -180,8 +180,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 header {
-  border: 6px solid white;
-  height: 90vh;
+  height: 100vh;
   margin: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -195,72 +194,8 @@ header {
   text-align: center;
 }
 
-.questionsContainer {
-  margin-top: 50px;
-}
-
 .question {
-  border: 6px solid white;
-  height: 70vh;
-  margin-bottom: 50px;
   display: none;
-}
-
-.selectionContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.selection {
-  width: 33%;
-}
-
-.choice {
-  height: 80px;
-  width: calc(33% - 10px);
-  margin: 0 10px;
-  border: 2px solid gold;
-}
-
-.choice:hover {
-  background-color: black;
-  color: white;
-  cursor: pointer;
-}
-
-#writeQuestion {
-  font-size: 3rem;
-  font-weight: bold;
-  color: green;
-}
-
-span,
-ul,
-li,
-a,
-h1,
-h2,
-p,
-button {
-  margin: 0;
-  padding: 0;
-}
-
-ul,
-li,
-a {
-  list-style: none;
-  text-decoration: none;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  background-color: #171717;
-  color: white;
 }
 
 img {
@@ -272,4 +207,14 @@ img {
   max-width: 1100px;
   margin: 0 auto;
   width: 90%;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+header,
+.question {
+  height: 100vh;
 }
