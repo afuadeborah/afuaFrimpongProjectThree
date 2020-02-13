@@ -172,30 +172,30 @@ $(document).ready(function(){
             console.log(grungeLength);
             console.log(pastelLength);
             
-            if(vaporLength > grungeLength && vaporLength > pastelLength){
-                let HtmlToAppend = `
-                <h3>You are:</h3>
-                <span class='aesthetic'>VaporWave</div>
-                `
-                $('.result').html(HtmlToAppend);
-            } else if (grungeLength > vaporLength && grungeLength > pastelLength){
-                let HtmlToAppend = `
-                <h3>You are:</h3>
-                <span class='aesthetic'>Grunge</div>
-                `
-                $('.result').html(HtmlToAppend);
-            } else {
-                let HtmlToAppend = `
-                <h3>You are:</h3>
-                <span class='aesthetic'>Pastel</div>
-                `
-                $('.result').html(HtmlToAppend);
-            }
+                if(vaporLength > grungeLength && vaporLength > pastelLength){
+                    let HtmlToAppend = `
+                    <h3>You are:</h3>
+                    <span class='aesthetic'>VaporWave</div>
+                    `
+                    $('.result').html(HtmlToAppend);
+                } else if (grungeLength > vaporLength && grungeLength > pastelLength){
+                    let HtmlToAppend = `
+                    <h3>You are:</h3>
+                    <span class='aesthetic'>Grunge</div>
+                    `
+                    $('.result').html(HtmlToAppend);
+                } else {
+                    let HtmlToAppend = `
+                    <h3>You are:</h3>
+                    <span class='aesthetic'>Pastel</div>
+                    `
+                    $('.result').html(HtmlToAppend);
+                }
+                    
                 
-            
-                $('.question').hide();
-                $('header').hide();
-                $('.result').show().fadeIn();
+                    $('.question').hide();
+                    $('header').hide();
+                    $('.result').show().fadeIn();
                 
 
 
@@ -203,7 +203,7 @@ $(document).ready(function(){
             
             
      
-                //After showing result on clock of last button, clear quiz, aesthetic array and start again
+                //After showing result on click of last button, clear quiz, aesthetic array and start again
             });
         };
     });
