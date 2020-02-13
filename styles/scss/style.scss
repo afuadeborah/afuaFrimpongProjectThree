@@ -9,7 +9,7 @@
 // coolrs.co
 // color.halipixel.com
 
-Strip Club
+//Strip Club
 span,
 h1,
 h2,
@@ -22,9 +22,9 @@ form {
 
 
 
-// html {
-//     font-size: 62.5%;
-// }
+html {
+    font-size: 62.5%;
+}
 
 
 img {
@@ -41,10 +41,18 @@ img {
 body {
     background-color: black;
     color: white;
+    font-family: $bodyFont;
     }
 
 
 header,
-.question {
+.question,
+.results {
     height: 100vh;
+}
+
+h1 {
+    font-family: $revaliaHeadingfont;
+    font-size: 5rem;
+    // box-shadow: 
 }

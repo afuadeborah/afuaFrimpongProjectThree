@@ -11,9 +11,9 @@ const quizQuestions = [
     {
         question: "Congrats, You just signed a record deal! Pick your album cover design.",
         choices: [
-            "1970", 
-            "1982", 
-            "1985"],
+            "./quizAssets/p-album.jpg", 
+            "./quizAssets/v-album.jpg", 
+            "./quizAssets/g-album.jpg"],
         categories: ["pastel", "vapor", "grunge"]
     },
     {
@@ -71,33 +71,31 @@ const aestheticScore = [];
             }
 
     };
-    // printQuestion();
+
 
 //Grab the value of the question and do something
     function grabAestheticValue() {
-            const selectedValue = $('input[type=radio]:checked').val();
-            console.log(selectedValue);
+        const selectedValue = $('input[type=radio]:checked').val();
+        console.log(selectedValue);
 
-            if (selectedValue === 'grunge') {
-                aestheticScore.push(selectedValue);
+        if (selectedValue === 'grunge') {
+            aestheticScore.push(selectedValue);
 
-            } else if (selectedValue === 'vapor') {
-                aestheticScore.push(selectedValue);
+        } else if (selectedValue === 'vapor') {
+            aestheticScore.push(selectedValue);
 
-            } else {
-                aestheticScore.push(selectedValue);
-                // pastel value
-            }
-            console.log(aestheticScore);
+        } else {
+            aestheticScore.push(selectedValue);
+            // pastel value
+        }
+        console.log(aestheticScore);
 
-
-            // Prevent more than one answer being clicked by triggering next button event
 
     };
 
 $(document).ready(function(){
 
-// 1. Username Creation and Beginning of Quiz
+//Username Creation and Beginning of Quiz
     $('#startWave').on('click', function(e){
         e.preventDefault();
         const userName = $('#waveName');
@@ -116,17 +114,14 @@ $(document).ready(function(){
         $('.question').fadeIn()
         userName.val('');
     });
-    // DONE
 
-// Call question print 
     printQuestion();
-    
 
-    
 // Proceed to the next question in the array, if we hit the last question go to results, if not display the next question
 //Bounce an alert if there wasn't an option checked 
     
     const nextButton = $('.next');
+
 // Next Question in Array
     nextButton.on('click', function(){
         grabAestheticValue();
@@ -165,13 +160,15 @@ $(document).ready(function(){
                 $('.question').hide();
                 $('header').hide();
                 $('.result').show().fadeIn();
-
+// For each result I want to change the colors of certain elements
                 if(pastelScore > grungeScore && pastelScore < vaporScore){
                     let resultHtml = `
                 <h3>You are: </h3>
                 <span>Pastel</span>
                 `;
                     $('.result').html(resultHtml);
+
+                    //Colour
 
                 } else if (vaporScore > grungeScore && vaporScore > pastelScore){
                     console.log('vapor wins');
@@ -180,6 +177,8 @@ $(document).ready(function(){
                 <span>VaporWave</span>
                 `;
                     $('.result').html(resultHtml )
+
+                    //Colour
                     
                 } else {
                     console.log('grunge wins');
@@ -189,14 +188,9 @@ $(document).ready(function(){
                 `;
                     $('.result').html(resultHtml);
                     
+
+                    //Colour
                 }
-                // OMG IT WORKS
-                
-                
-
-                // $('.question').hide();
-                // $('.result').show();
-
 
                 //After showing result on clock of last button, clear quiz, aesthetic array and start again
             });

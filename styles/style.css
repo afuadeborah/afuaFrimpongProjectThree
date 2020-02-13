@@ -203,12 +203,58 @@ img {
   height: 300px;
 }
 
+.welcome {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  -ms-grid-rows: (1fr)[6];
+      grid-template-rows: repeat(6, 1fr);
+  grid-row-gap: 20px;
+}
+
+.welcome .title {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: 1 / 1 / 3 / 8;
+}
+
+.welcome form {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 5;
+  grid-area: 3 / 2 / 5 / 7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.letsGo {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  grid-area: 5 / 3 / 7 / 6;
+}
+
 .result,
 .redo {
   display: none;
 }
 
-Strip Club
 span,
 h1,
 h2,
@@ -217,6 +263,10 @@ button,
 form {
   margin: 0;
   padding: 0;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 img {
@@ -233,9 +283,16 @@ img {
 body {
   background-color: black;
   color: white;
+  font-family: "Noto Sans", sans-serif;
 }
 
 header,
-.question {
+.question,
+.results {
   height: 100vh;
+}
+
+h1 {
+  font-family: "Revalia", cursive;
+  font-size: 5rem;
 }
