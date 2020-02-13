@@ -66,7 +66,12 @@ const aestheticScore = [];
 
             // print the selections to each radio button
             for (let i = 0; i < options.length; i++) {
-                formHtml += `<div class='check'><input type='radio' name='option' value='${wave[i]}' id='${i}'><label for='${i}'><img src='${options[i]}'></label</div>`;
+                formHtml += `
+                <input type='radio' name='option' value='${wave[i]}' id='${i}'>
+                <label for='${i}'>
+                    <img src='${options[i]}'>
+                </label></<input>`;
+
                 $('.questionBox').html(formHtml);
             }
 
@@ -149,6 +154,7 @@ $(document).ready(function(){
 
                 if (tallyScore === 'vapor'){
                         vaporScore.push(tallyScore);
+                        
                 } else if (tallyScore === 'grunge'){
                     grungeScore.push(tallyScore);
                     
@@ -156,42 +162,47 @@ $(document).ready(function(){
                     pastelScore.push(tallyScore);
                 }
             }
-            //Nested if
+
+            // Compare Arrays
+            const vaporLength = vaporScore.length;
+            const grungeLength = grungeScore.length;
+            const pastelLength = pastelScore.length;
+            
+            console.log(vaporLength);
+            console.log(grungeLength);
+            console.log(pastelLength);
+            
+            if(vaporLength > grungeLength && vaporLength > pastelLength){
+                let HtmlToAppend = `
+                <h3>You are:</h3>
+                <span class='aesthetic'>VaporWave</div>
+                `
+                $('.result').html(HtmlToAppend);
+            } else if (grungeLength > vaporLength && grungeLength > pastelLength){
+                let HtmlToAppend = `
+                <h3>You are:</h3>
+                <span class='aesthetic'>Grunge</div>
+                `
+                $('.result').html(HtmlToAppend);
+            } else {
+                let HtmlToAppend = `
+                <h3>You are:</h3>
+                <span class='aesthetic'>Pastel</div>
+                `
+                $('.result').html(HtmlToAppend);
+            }
+                
+            
                 $('.question').hide();
                 $('header').hide();
                 $('.result').show().fadeIn();
-// For each result I want to change the colors of certain elements
-                if(pastelScore > grungeScore && pastelScore < vaporScore){
-                    let resultHtml = `
-                <h3>You are: </h3>
-                <span>Pastel</span>
-                `;
-                    $('.result').html(resultHtml);
+                
 
-                    //Colour
 
-                } else if (vaporScore > grungeScore && vaporScore > pastelScore){
-                    console.log('vapor wins');
-                    let resultHtml = `
-                <h3>You are: </h3>
-                <span>VaporWave</span>
-                `;
-                    $('.result').html(resultHtml )
 
-                    //Colour
-                    
-                } else {
-                    console.log('grunge wins');
-                    let resultHtml = `
-                <h3>You are: </h3>
-                <span>Grunge</span>
-                `;
-                    $('.result').html(resultHtml);
-                    
-
-                    //Colour
-                }
-
+            
+            
+     
                 //After showing result on clock of last button, clear quiz, aesthetic array and start again
             });
         };

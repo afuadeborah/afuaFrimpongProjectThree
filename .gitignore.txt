@@ -1,6 +1,0 @@
-node modules
-.psd
-.vscode
-.DS_Store
-.pdf
-.zip

@@ -1,45 +1,42 @@
-.question{
-    display: none;
-}
 
 img {
     width: 33%;
     height: 300px;
 }
 
-.welcome {
+
+// Question Container
+.question {
+    display: none;
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    }
+    
+    h2 { 
+        grid-area: 1 / 1 / 2 / 9; 
+    }
 
-        h1 { 
-            grid-area: 1 / 1 / 3 / 8;
-            padding: 20px; 
-            letter-spacing: 1px;
-            // color: $black;
-        }
+    form { 
+        grid-area: 2 / 2 / 4 / 8; 
+    }
 
-        span:first-of-type { 
-            grid-area: 3 / 3 / 4 / 6; 
-        }
+    button { 
+        grid-area: 4 / 4 / 5 / 6; 
+    } 
 
-        form { 
-            grid-area: 4 / 3 / 6 / 6; 
-
-            #waveName {
-                padding: 10px 50px;
-            }
-
-            #startWave {
-                padding: 10px 30px;
-            }
-        }
-
+input[type=radio]{
+    visibility: hidden;
 }
 
-.letsGo { 
-    grid-area: 6 / 3 / 8 / 6; 
-} 
+.questionBox {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+
+       
+}
 
 
 
