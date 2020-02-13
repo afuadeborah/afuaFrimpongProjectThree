@@ -1,17 +1,19 @@
 // Main Array
 const quizQuestions = [
     {
-        question: "Pick a shoe.",
-        choices: ["Steve", "kevin", "peter"],
+        question: "Had to do it on 'em. Pick a pair of Vans.",
+        choices: ["./quizAssets/v-shoe.jpg", 
+        "./quizAssets/g-shoe.jpg", 
+        "./quizAssets/p-shoe.jpg"],
         categories: ["vapor", "grunge", "pastel"]
     },
     {
-        question: "Choose a season.",
+        question: "Congrats, You just signed a record deal! Pick your album cover design.",
         choices: ["1970", "1982", "1985"],
         categories: ["pastel", "vapor", "grunge"]
     },
     {
-        question: "Pick a flower.",
+        question: "You just turned 25 and are having a quarter-life crisis. Let's repaint your room. Pick a colour palette.",
         choices: ["Seoul", "New York", "Tokyo"],
         categories: ["grunge", "pastel", "vapor"]
 
@@ -47,15 +49,14 @@ const aestheticScore = [];
             // the selections that the user will click on
         const options = quizQuestions[currentQuestion].choices;
         const wave = quizQuestions[currentQuestion].categories;
-        // console.log(options);
-        // console.log(wave);
+
 
             let formHtml = '';
 
 
             // print the selections to each radio button
             for (let i = 0; i < options.length; i++) {
-                formHtml += `<div class='check'><input type='radio' name='option' value='${wave[i]}'>${options[i]}</input></div>`;
+                formHtml += `<div class='check'><input type='radio' name='option' value='${wave[i]}' id='${i}'><label for='${i}'><img src='${options[i]}'></label</div>`;
                 $('.questionBox').html(formHtml);
             }
 
@@ -64,7 +65,6 @@ const aestheticScore = [];
 
 //Grab the value of the question and do something
     function grabAestheticValue() {
-        // $('input[name=option]').on('click', function() {
             const selectedValue = $('input[type=radio]:checked').val();
             console.log(selectedValue);
 
@@ -79,19 +79,15 @@ const aestheticScore = [];
                 // pastel value
             }
             console.log(aestheticScore);
-            console.log('clicked');
+
 
             // Prevent more than one answer being clicked by triggering next button event
-        // });
+
     };
 
 $(document).ready(function(){
 
-// const beginButton = $('#startWave');
-// console.log(beginButton);
-
-
-// Username Creation and Beginning of Quiz
+// 1. Username Creation and Beginning of Quiz
     $('#startWave').on('click', function(e){
         e.preventDefault();
         const userName = $('#waveName');
@@ -107,7 +103,7 @@ $(document).ready(function(){
             console.log(waveName);
         }
 
-        $('.question').show()
+        $('.question').fadeIn()
         userName.val('');
     });
     // DONE
@@ -135,19 +131,47 @@ $(document).ready(function(){
         } 
         if (currentQuestion == quizQuestions.length - 1){
             // on the last question we want that click to trigger the result div
+            
             nextButton.on('click', function(){
+                
+            // tally up the aesthetic array here as well
+            const resultHtml = `<h3>Your result is </h3>`;
+            let vaporScore = [];
+            let grungeScore = [];
+            let pastelScore = [];
+            // --
+            for(let i = 0; i <= aestheticScore.length; i++){
+                const tallyScore = aestheticScore[i];
+                // console.log(tallyScore);
+                if (tallyScore === 'vapor'){
+                        vaporScore.push(tallyScore);
+                } else if (tallyScore === 'grunge'){
+                    grungeScore.push(tallyScore);
+                    
+                } else {
+                    pastelScore.push(tallyScore);
+                }
+            }
+            //Nested if
+                if(pastelScore > grungeScore && pastelScore < vaporScore){
+                    console.log('pastel wins');
+                } else if (vaporScore > grungeScore && vaporScore > pastelScore){
+                    console.log('vapor wins');
+                } else {
+                    console.log('grunge wins');
+                }
+                // OMG IT WORKS
+                
+            
+
                 $('.question').hide();
                 $('.result').show();
-
-            // tally up the aesthetic array here as well
-            // --
-                const resultHtml = `<h3>Your result is</h3>`;
                 $('.result').html(resultHtml);
                 console.log(resultHtml);
+
+                //After showing result on clock of last button, clear quiz, aesthetic array and start again
             });
         };
-
-
     });
 
 
@@ -167,6 +191,11 @@ $(document).ready(function(){
 });
 // Document Ready Scope
 
+
+// New options in case of double answers
+// pastel goth = pastel + grunge
+// Pastel + vaporwave = seapunk
+// vaporwave + grunge = ocean grunge
 
 
 

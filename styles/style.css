@@ -198,8 +198,24 @@ header {
   display: none;
 }
 
+img {
+  width: 33%;
+  height: 300px;
+}
+
 .result {
   display: none;
+}
+
+Strip Club
+span,
+h1,
+h2,
+p,
+button,
+form {
+  margin: 0;
+  padding: 0;
 }
 
 img {
