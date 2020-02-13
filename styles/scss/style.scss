@@ -42,6 +42,7 @@ body {
     background-color: black;
     color: white;
     font-family: $bodyFont;
+    @include fontSize(20);
     }
 
 
@@ -51,10 +52,32 @@ header,
     height: 100vh;
 }
 
+header {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('/quizAssets/g-shoe.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+}
+
 h1 {
-    font-family: $revaliaHeadingfont;
+    font-family: $archivoHeadingfont;
     font-size: 6rem;
     margin-bottom: 20px;
-    box-shadow: -30px -15px 0px 0px $vaporOrange;
-    background-color: #08C5D3;
+    // box-shadow: -30px -15px 0px 0px $vaporOrange;
+    // background-color: #08C5D3;
+    
+}
+
+
+button,
+#startWave {
+    background-color: $vaporGold;
+    border: 2px solid $vaporGold;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+.letsGo p {
+    @include fontSize(35);
 }

@@ -9,7 +9,7 @@ const quizQuestions = [
         categories: ["vapor", "grunge", "pastel"]
     },
     {
-        question: "Congrats, You just signed a record deal! Pick your album cover design.",
+        question: "Congrats, you just signed a record deal! Pick your album cover design.",
         choices: [
             "./quizAssets/p-album.jpg", 
             "./quizAssets/v-album.jpg", 
