@@ -67,7 +67,7 @@ const aestheticScore = [];
             for (let i = 0; i < options.length; i++) {
                 formHtml += `
                 <input type='radio' name='option' value='${wave[i]}' id='${i}'>
-                    <label for='${i}'>
+                    <label for='${i}' tabindex="0">
                         <img src='${options[i]}'>
                     </label>
                 </<input>`;
@@ -113,7 +113,7 @@ $(document).ready(function(){
             alert('Please enter a ~ wavename ~ to start the quiz.');
 
         } else {
-            $('.letsGo').html(`<p>surf's up, ${waveName}.</p>`);
+            $('.letsGo').html(`<p tabindex="0">surf's up, ${waveName}.</p>`);
             console.log(waveName);
         }
 
@@ -179,19 +179,19 @@ $(document).ready(function(){
                 
                 if(vaporLength > grungeLength && vaporLength > pastelLength){
                     let HtmlToAppend = `
-                    <h3 class='aesthetic glitch'>VaporWave</h3>
+                    <h3 class='aesthetic glitch' tabindex="0">VaporWave</h3>
                     `
                     $('.result').html(HtmlToAppend);
                     $('.result').addClass('aestheticV');
                 } else if (grungeLength > vaporLength && grungeLength > pastelLength){
                     let HtmlToAppend = `
-                    <h3 class='aesthetic glitch'>Grunge</dh3>
+                    <h3 class='aesthetic glitch' tabindex="0">Grunge</dh3>
                     `
                     $('.result').addClass('aestheticG');
                     $('.result').html(HtmlToAppend);
                 } else {
                     let HtmlToAppend = `
-                    <h3 class='aesthetic glitch'>Pastel</h3>
+                    <h3 class='aesthetic glitch' tabindex="0">Pastel</h3>
                     `
                     $('.result').addClass('aestheticP');
                     $('.result').html(HtmlToAppend);
