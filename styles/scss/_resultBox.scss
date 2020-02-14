@@ -1,3 +1,4 @@
+// Aesthetic Conatiner
 .result,
 .redo {
     display:none;
@@ -10,22 +11,111 @@
 }
 
 
+// Aesthetic Result
 h3 {
-    @include fontSize(45);
     font-weight: bold;
-    grid-area: 1 / 2 / 3 / 6;
-}    
-
-h3,
-.aesthetic {
+    letter-spacing: 15px;
+    padding: 20px;
     text-align: center;
-}
-
-.aesthetic { 
     grid-area: 3 / 3 / 4 / 5; 
     @include fontSize(60);
+    background-color: black;
+}
+
+.glitch {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+
+}
+
+.aestheticV .glitch:before,
+.aestheticV.glitch:after {
+    @include glitch('Vaporwave')
+}
+
+.aestheticG .glitch:before,
+.aestheticG .glitch:after {
+    @include glitch('Grunge');
+}
+
+.aestheticP .glitch:before,
+.aestheticP .glitch:after {
+    @include glitch('Pastel');
+}
+
+.glitch {
+    &:before, 
+    &:after {
+        @include glitch('Grunge');
+
+
+    } &:after {
+        color: #f0f;
+        z-index: -2;
+
+    } &:before {
+        color: #0ff;
+        z-index: -1;
+    }
+}
+
+.glitch:hover {
+    &:before {
+        animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both infinite
+    }
+    &:after {
+        animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both infinite
+    }
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0)
+    }
+    20% {
+        transform: translate(-5px, 5px)
+    }
+    40% {
+        transform: translate(-5px, -5px)
+    }
+    60% {
+        transform: translate(5px, 5px)
+    }
+    80% {
+        transform: translate(5px, -5px)
+    }
+    to {
+        transform: translate(0)
+    }
+}
+
+.aestheticV,
+.aestheticG,
+.aestheticP {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.aestheticV {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../quizAssets/v-result.jpg);
+
+}
+
+.aestheticG {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../quizAssets/grunge-pic.jpg);
+
 }
 
 
 
-// .div3 { grid-area: 4 / 1 / 7 / 7; } 
+.aestheticP {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../quizAssets/pastel-pic.jpg);
+}
+
+
+// Glitch Effect Credit
+// https://codepen.io/ihatetomatoes/pen/8a16e11e6d6206f5eb1ed7a37fbbe1dc

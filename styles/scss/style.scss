@@ -48,7 +48,7 @@ body {
 
 header,
 .question,
-.results {
+.result {
     height: 100vh;
 }
 
@@ -59,16 +59,17 @@ button,
     background-color: $vaporGold;
     border: 2px solid $vaporGold;
     font-weight: bolder;
+    letter-spacing: 2px;
 }
 
 
 button,
 #startWave,
 .redo ,
-h1 {
+h1,
+h3 {
     
     text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
 

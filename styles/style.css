@@ -193,7 +193,7 @@ header {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.7))), url("../quizAssets/background-img-3.jpg");
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url("../quizAssets/background-img-3.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
   background-position: center;
 }
 
@@ -291,6 +291,7 @@ header {
   grid-area: 1 / 1 / 2 / 9;
   padding: 50px 0;
   font-weight: bold;
+  margin-top: 20px;
 }
 
 .question .questionBox {
@@ -316,16 +317,22 @@ input[type=radio] {
   opacity: 0;
 }
 
-label:checked,
-label:hover,
-label:active {
-  border: 3px solid #f00078;
-}
-
 label {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 33%;
           flex: 1 0 33%;
+}
+
+input[type=radio]:focus,
+input[type=text]:focus,
+input[type=submit]:focus,
+label:focus,
+button:focus {
+  outline: 2px solid #f06000;
+}
+
+label:hover {
+  border: 3px solid #f00078;
 }
 
 .questionBox {
@@ -357,22 +364,10 @@ label {
 }
 
 h3 {
-  font-size: 45px;
-  font-size: 4.5rem;
   font-weight: bold;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 4;
-  grid-area: 1 / 2 / 3 / 6;
-}
-
-h3,
-.aesthetic {
+  letter-spacing: 15px;
+  padding: 20px;
   text-align: center;
-}
-
-.aesthetic {
   -ms-grid-row: 3;
   -ms-grid-row-span: 1;
   -ms-grid-column: 3;
@@ -380,6 +375,159 @@ h3,
   grid-area: 3 / 3 / 4 / 5;
   font-size: 60px;
   font-size: 6rem;
+  background-color: black;
+}
+
+.glitch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.aestheticV .glitch:before,
+.aestheticV.glitch:after {
+  display: block;
+  content: "Vaporwave";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: .8;
+}
+
+.aestheticG .glitch:before,
+.aestheticG .glitch:after {
+  display: block;
+  content: "Grunge";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: .8;
+}
+
+.aestheticP .glitch:before,
+.aestheticP .glitch:after {
+  display: block;
+  content: "Pastel";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: .8;
+}
+
+.glitch:before, .glitch:after {
+  display: block;
+  content: "Grunge";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: .8;
+}
+
+.glitch:after {
+  color: #f0f;
+  z-index: -2;
+}
+
+.glitch:before {
+  color: #0ff;
+  z-index: -1;
+}
+
+.glitch:hover:before {
+  -webkit-animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+          animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+
+.glitch:hover:after {
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+}
+
+@-webkit-keyframes glitch {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-5px, 5px);
+            transform: translate(-5px, 5px);
+  }
+  40% {
+    -webkit-transform: translate(-5px, -5px);
+            transform: translate(-5px, -5px);
+  }
+  60% {
+    -webkit-transform: translate(5px, 5px);
+            transform: translate(5px, 5px);
+  }
+  80% {
+    -webkit-transform: translate(5px, -5px);
+            transform: translate(5px, -5px);
+  }
+  to {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-5px, 5px);
+            transform: translate(-5px, 5px);
+  }
+  40% {
+    -webkit-transform: translate(-5px, -5px);
+            transform: translate(-5px, -5px);
+  }
+  60% {
+    -webkit-transform: translate(5px, 5px);
+            transform: translate(5px, 5px);
+  }
+  80% {
+    -webkit-transform: translate(5px, -5px);
+            transform: translate(5px, -5px);
+  }
+  to {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+.aestheticV,
+.aestheticG,
+.aestheticP {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.aestheticV {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.7))), url(../quizAssets/v-result.jpg);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../quizAssets/v-result.jpg);
+}
+
+.aestheticG {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.7))), url(../quizAssets/grunge-pic.jpg);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../quizAssets/grunge-pic.jpg);
+}
+
+.aestheticP {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.7))), url(../quizAssets/pastel-pic.jpg);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../quizAssets/pastel-pic.jpg);
 }
 
 span,
@@ -417,7 +565,7 @@ body {
 
 header,
 .question,
-.results {
+.result {
   height: 100vh;
 }
 
@@ -427,12 +575,13 @@ button,
   background-color: #ffa818;
   border: 2px solid #ffa818;
   font-weight: bolder;
+  letter-spacing: 2px;
 }
 
 button,
 #startWave,
 .redo,
-h1 {
+h1,
+h3 {
   text-transform: uppercase;
-  letter-spacing: 2px;
 }
