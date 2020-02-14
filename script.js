@@ -26,17 +26,20 @@ const quizQuestions = [
 
     },
     {
-        question: "Pick an album.",
+        question: "Fill in the blank. I wish I could go back to the: ",
         choices: [
-            "scientist", 
-            "bus driver", 
-            "programmer"],
+            "./quizAssets/v-year.png", 
+            "./quizAssets/g-year.png", 
+            "./quizAssets/p-year.jpg"],
         categories: ["vapor", "grunge", "pastel"]
 
     },
     {
-        question: "You have a to do list to begin but Netflix just added more movies from the 90s . Pick a movie.",
-        choices: ["1", "2", "0"],
+        question: "Time to get away. Pick a destination.",
+        choices: [
+            "./quizAssets/p-vacation.jpg", 
+            "./quizAssets/v-vacation.jpg", 
+            "./quizAssets/g-vacation.jpg"],
         categories: ["pastel", "vapor", "grunge"]
 
     }];
@@ -48,7 +51,7 @@ const aestheticScore = [];
 
 
 
-// Print all the questions to the page, start quiz
+// Print all the questions to the page, Start quiz
     function printQuestion() {
         const askQuestion = quizQuestions[currentQuestion].question;
 
@@ -145,11 +148,10 @@ $(document).ready(function(){
             
             nextButton.on('click', function(){
                 
-            // tally up the aesthetic array here as well
             let vaporScore = [];
             let grungeScore = [];
             let pastelScore = [];
-            // --
+
             for(let i = 0; i <= aestheticScore.length; i++){
                 const tallyScore = aestheticScore[i];
 
@@ -175,20 +177,20 @@ $(document).ready(function(){
             
                 if(vaporLength > grungeLength && vaporLength > pastelLength){
                     let HtmlToAppend = `
-                    <h3>You are:</h3>
-                    <span class='aesthetic'>VaporWave</div>
+                    <h3>YOU ARE</h3>
+                    <span class='aesthetic aestheticV'>VaporWave</div>
                     `
                     $('.result').html(HtmlToAppend);
                 } else if (grungeLength > vaporLength && grungeLength > pastelLength){
                     let HtmlToAppend = `
-                    <h3>You are:</h3>
-                    <span class='aesthetic'>Grunge</div>
+                    <h3>YOU ARE</h3>
+                    <span class='aesthetic aestheticG'>Grunge</div>
                     `
                     $('.result').html(HtmlToAppend);
                 } else {
                     let HtmlToAppend = `
-                    <h3>You are:</h3>
-                    <span class='aesthetic'>Pastel</div>
+                    <h3>YOU ARE</h3>
+                    <span class='aesthetic aestheticP'>Pastel</div>
                     `
                     $('.result').html(HtmlToAppend);
                 }
@@ -231,6 +233,9 @@ $(document).ready(function(){
 // pastel goth = pastel + grunge
 // Pastel + vaporwave = seapunk
 // vaporwave + grunge = ocean grunge
+
+// Tech win was fine tuning scoring else/if bc of extra result
+// Comparing arrays and making dynamic elements 
 
 
 
