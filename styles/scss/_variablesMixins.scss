@@ -33,9 +33,8 @@
 
 
 // Fonts
-    $sourceHeadingfont: 'Source Code Pro', monospace;
-    $archivoHeadingfont: 'Archivo', sans-serif;
-    $bodyFont: 'Noto Sans', sans-serif;
+    $robotoFont: 'Roboto Mono', monospace;
+    $bodyFont: 'Source Code Pro', monospace;
 
     @mixin fontSize($sizeValue) {
     font-size: $sizeValue * 1px;

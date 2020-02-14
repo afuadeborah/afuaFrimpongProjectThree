@@ -1,32 +1,49 @@
 
-img {
-    width: 33%;
+.question img {
     height: 300px;
 }
 
 
 // Question Container
 .question {
-    display: none;
     display: grid;
+    display: none;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    }
+    
     
     h2 { 
+        @include fontSize(40);
         grid-area: 1 / 1 / 2 / 9; 
+        padding: 50px 0;
+        font-weight: bold;
     }
 
-    form { 
+    .questionBox { 
         grid-area: 2 / 2 / 4 / 8; 
     }
 
-    button { 
+    .next{ 
         grid-area: 4 / 4 / 5 / 6; 
+        height: 50px;
+        margin-top: 40px;
     } 
 
+}
+
 input[type=radio]{
-    visibility: hidden;
+    opacity: 0;
+}
+
+label:checked,
+label:hover,
+label:active {
+    border: 3px solid $vaporPink;
+}
+
+
+label {
+    flex: 1 0 33%;
 }
 
 .questionBox {
@@ -34,8 +51,6 @@ input[type=radio]{
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-
-       
 }
 
 

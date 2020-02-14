@@ -17,11 +17,11 @@ const quizQuestions = [
         categories: ["pastel", "vapor", "grunge"]
     },
     {
-        question: "You just turned 25 and are having a quarter-life crisis. Let's repaint your room. Pick a colour palette.",
+        question: "You just turned 25. You're having a quarter-life crisis and MUST repaint your room. Pick a colour palette.",
         choices: [
-            "Seoul", 
-            "New York", 
-            "Tokyo"],
+            "./quizAssets/g-palette.png", 
+            "./quizAssets/p-palette.png", 
+            "./quizAssets/v-palette.jpg"],
         categories: ["grunge", "pastel", "vapor"]
 
     },
@@ -51,12 +51,11 @@ const aestheticScore = [];
 // Print all the questions to the page, start quiz
     function printQuestion() {
         const askQuestion = quizQuestions[currentQuestion].question;
-            // console.log(askQuestion);
 
-            $('h2').html('Question ' + parseInt(currentQuestion + 1) + " : " + askQuestion);
+            $('h2').html('Question ' + parseInt(currentQuestion + 1) + ": " + askQuestion);
             
 
-            // the selections that the user will click on
+    
         const options = quizQuestions[currentQuestion].choices;
         const wave = quizQuestions[currentQuestion].categories;
 
@@ -80,6 +79,7 @@ const aestheticScore = [];
 
 //Grab the value of the question and do something
     function grabAestheticValue() {
+        // const checked = $('input[type=radio]:checked');
         const selectedValue = $('input[type=radio]:checked').val();
         console.log(selectedValue);
 
@@ -89,12 +89,11 @@ const aestheticScore = [];
         } else if (selectedValue === 'vapor') {
             aestheticScore.push(selectedValue);
 
-        } else {
+        } else if (selectedValue === 'pastel'){
             aestheticScore.push(selectedValue);
-            // pastel value
         }
         console.log(aestheticScore);
-
+        
 
     };
 
@@ -112,14 +111,16 @@ $(document).ready(function(){
             alert('Please enter a ~ wavename ~ to start the quiz.');
 
         } else {
-            $('.letsGo').html(`<p>let's r i d e, ${waveName}.</p>`);
+            $('.letsGo').html(`<p>surf's up, ${waveName}.</p>`);
             console.log(waveName);
         }
 
-        $('.question').fadeIn()
+        $('.question').show()
         userName.val('');
+
     });
 
+    
     printQuestion();
 
 // Proceed to the next question in the array, if we hit the last question go to results, if not display the next question
@@ -153,12 +154,12 @@ $(document).ready(function(){
                 const tallyScore = aestheticScore[i];
 
                 if (tallyScore === 'vapor'){
-                        vaporScore.push(tallyScore);
+                    vaporScore.push(tallyScore);
                         
                 } else if (tallyScore === 'grunge'){
                     grungeScore.push(tallyScore);
                     
-                } else {
+                } else if (tallyScore === 'pastel'){
                     pastelScore.push(tallyScore);
                 }
             }
