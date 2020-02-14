@@ -21,7 +21,6 @@ form {
 }
 
 
-
 html {
     font-size: 62.5%;
 }
@@ -37,6 +36,7 @@ img {
     margin: 0 auto;
     width: 90%;
 }
+
 
 body {
     background-color: black;
@@ -72,6 +72,10 @@ h3 {
     text-transform: uppercase;
 }
 
-
+header,
+input[type=text]::placeholder,
+h3 {
+    text-align: center;
+}
 
 // USE FOCUS-WITHIN

@@ -3,7 +3,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    // text-align: center;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('../quizAssets/background-img-3.jpg');
     background-repeat: no-repeat;
     background-size: auto;
@@ -60,4 +60,88 @@ header {
     }
 }
 
+input[type=text]::placeholder {
+    @include fontSize(25);
+}
 
+@media (max-width: 805px){
+    .welcome {
+        h1 {
+            @include fontSize(70);
+        }
+
+        input[type=text]::placeholder {
+            @include fontSize(20);
+        }
+
+        span:first-of-type {
+            grid-column-start: 2;
+            grid-column-end: 7;
+        }
+
+        form {
+            #waveName{
+                padding: 10px 0;
+            }
+        }
+    }
+
+    .letsGo {
+        grid-column-start: 2;
+        grid-column-end: 7;
+    }
+
+}
+
+@media (max-width: 670px){
+    .welcome {
+        h1 {
+            @include fontSize(60);
+            text-align: center;
+        }
+    }
+}
+
+@media(max-width:580px){
+    .welcome{
+        h1 {
+            @include fontSize(55px);
+        }
+    }
+}
+
+@media(max-width: 450px){
+    
+    .welcome {
+
+        h1 {
+            @include fontSize(50);
+            padding: 0;
+        }
+
+        span:first-of-type {
+            grid-column-start: 1;
+            grid-column-end: 8;
+        }
+
+        form {
+            justify-content: center;
+            
+        }
+    }
+
+    input[type=text]::placeholder{
+        @include fontSize(15);
+        padding: 0;
+    }
+
+    .letsGo {
+
+        p {
+            @include fontSize(25);
+            margin: unset;
+        }
+    }
+    
+    
+}

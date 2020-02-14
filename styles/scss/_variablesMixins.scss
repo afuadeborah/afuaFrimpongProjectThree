@@ -42,20 +42,22 @@
 }
 
 // Other
-@mixin backgroundImage($url){
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url($url);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
+    @mixin backgroundImage($url){
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url($url);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
 
-@mixin glitch($content){
-        display: block;
-        content: $content;
-        position: absolute;
-        top: 20px;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        opacity: .8;
-}
+    @mixin glitch($content){
+            display: block;
+            content: $content;
+            position: absolute;
+            top: 20px;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            opacity: .8;
+    }
+
+    // @mixin flex()

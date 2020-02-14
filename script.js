@@ -26,7 +26,7 @@ const quizQuestions = [
 
     },
     {
-        question: "Fill in the blank. I wish I could go back to the: ",
+        question: "Fill in the blank. I wish I could go back to the ___: ",
         choices: [
             "./quizAssets/v-year.png", 
             "./quizAssets/g-year.png", 
@@ -118,6 +118,7 @@ $(document).ready(function(){
         }
 
         $('.question').show()
+        $('footer').hide();
         userName.val('');
 
     });
@@ -200,12 +201,15 @@ $(document).ready(function(){
                 $('.question').hide();
                 $('header').hide();
                 $('.result').show();
+                $('.footer').show();
                 
-
-               
             });
         };
     });
+
+    // $('.redo').on('click', function(){
+
+    // })
 
 
 
