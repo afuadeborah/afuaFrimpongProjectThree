@@ -82,11 +82,9 @@ const aestheticScore = [];
     function grabAestheticValue() {
         const checked = $('input[type=radio]:checked');
         const selectedValue = $('input[type=radio]:checked').val();
-        console.log(selectedValue);
 
-        if (selectedValue === 'grunge') {
-            console.log('clicked g')
-            
+
+        if (selectedValue === 'grunge') {            
             aestheticScore.push(selectedValue);
 
         } else if (selectedValue === 'vapor') {
@@ -95,7 +93,6 @@ const aestheticScore = [];
         } else if (selectedValue === 'pastel'){
             aestheticScore.push(selectedValue);
         }
-        console.log(aestheticScore);
         
     };
 
@@ -106,7 +103,7 @@ $(document).ready(function(){
         e.preventDefault();
         const userName = $('#waveName');
         
-        // make this a local variable since I only need it here
+
         let waveName = userName.val();
         
         if (waveName === ''){
@@ -114,7 +111,6 @@ $(document).ready(function(){
 
         } else {
             $('.letsGo').html(`<p tabindex="0">surf's up, ${waveName}.</p>`);
-            console.log(waveName);
         }
 
         $('.question').show()
@@ -173,9 +169,6 @@ $(document).ready(function(){
                 const grungeLength = grungeScore.length;
                 const pastelLength = pastelScore.length;
                 
-                console.log(vaporLength);
-                console.log(grungeLength);
-                console.log(pastelLength);
                 
                 if(vaporLength > grungeLength && vaporLength > pastelLength){
                     let HtmlToAppend = `

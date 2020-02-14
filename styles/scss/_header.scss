@@ -115,23 +115,25 @@ input[type=text]::placeholder {
     .welcome {
 
         h1 {
-            @include fontSize(50);
+            @include fontSize(45);
             padding: 0;
         }
 
         span:first-of-type {
             grid-column-start: 1;
             grid-column-end: 8;
+            @include fontSize(15);
         }
 
         form {
             justify-content: center;
-            
+            grid-column-start: 2;
+            grid-column-end: 7;
         }
     }
 
     input[type=text]::placeholder{
-        @include fontSize(15);
+        @include fontSize(16);
         padding: 0;
     }
 
@@ -144,4 +146,16 @@ input[type=text]::placeholder {
     }
     
     
+}
+
+@media (max-width: 400px){
+    .welcome {
+        span:first-of-type {
+            @include fontSize(13);
+        }
+        form {
+            grid-column-start: 2;
+            grid-column-end: 7;
+        }
+    }
 }
