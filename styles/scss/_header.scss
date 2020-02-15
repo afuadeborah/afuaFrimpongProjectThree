@@ -119,6 +119,7 @@ input[type=text]::placeholder {
         }
 
         span:first-of-type {
+            @include fontSize(15);
             grid-column-start: 1;
             grid-column-end: 8;
         }
