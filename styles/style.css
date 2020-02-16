@@ -367,7 +367,7 @@ input[type=text]::placeholder {
   .welcome form {
     -ms-grid-column: 2;
         grid-column-start: 2;
-    grid-column-end: 7;
+    grid-column-end: 6;
   }
 }
 
