@@ -207,7 +207,6 @@ header {
 
 .welcome h1 {
   font-family: "Roboto Mono", monospace;
-  font-size: 85px;
   font-size: 8.5rem;
   margin-bottom: 20px;
   -ms-grid-row: 1;
@@ -259,7 +258,6 @@ header {
 }
 
 .letsGo p {
-  font-size: 35px;
   font-size: 3.5rem;
   margin: 30px 0;
   background-color: black;
@@ -267,44 +265,35 @@ header {
 }
 
 input[type=text]::-webkit-input-placeholder {
-  font-size: 25px;
   font-size: 2.5rem;
 }
 
 input[type=text]:-ms-input-placeholder {
-  font-size: 25px;
   font-size: 2.5rem;
 }
 
 input[type=text]::-ms-input-placeholder {
-  font-size: 25px;
   font-size: 2.5rem;
 }
 
 input[type=text]::placeholder {
-  font-size: 25px;
   font-size: 2.5rem;
 }
 
 @media (max-width: 805px) {
   .welcome h1 {
-    font-size: 70px;
     font-size: 7rem;
   }
   .welcome input[type=text]::-webkit-input-placeholder {
-    font-size: 20px;
     font-size: 2rem;
   }
   .welcome input[type=text]:-ms-input-placeholder {
-    font-size: 20px;
     font-size: 2rem;
   }
   .welcome input[type=text]::-ms-input-placeholder {
-    font-size: 20px;
     font-size: 2rem;
   }
   .welcome input[type=text]::placeholder {
-    font-size: 20px;
     font-size: 2rem;
   }
   .welcome span:first-of-type {
@@ -322,46 +311,63 @@ input[type=text]::placeholder {
   }
 }
 
+@media (max-width: 670px) {
+  .welcome h1 {
+    font-size: 6rem;
+    text-align: center;
+    margin-bottom: 0;
+    padding: 0;
+  }
+}
+
 @media (max-width: 450px) {
   .welcome h1 {
-    font-size: 50px;
-    font-size: 5rem;
-    padding: 0;
+    font-size: 4.5rem;
   }
   .welcome span:first-of-type {
     -ms-grid-column: 1;
         grid-column-start: 1;
     grid-column-end: 8;
+    font-size: 1.5rem;
   }
   .welcome form {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    grid-column-end: 7;
   }
   input[type=text]::-webkit-input-placeholder {
-    font-size: 15px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     padding: 0;
   }
   input[type=text]:-ms-input-placeholder {
-    font-size: 15px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     padding: 0;
   }
   input[type=text]::-ms-input-placeholder {
-    font-size: 15px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     padding: 0;
   }
   input[type=text]::placeholder {
-    font-size: 15px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     padding: 0;
   }
   .letsGo p {
-    font-size: 25px;
     font-size: 2.5rem;
     margin: unset;
+  }
+}
+
+@media (max-width: 400px) {
+  .welcome span:first-of-type {
+    font-size: 1.3rem;
+  }
+  .welcome form {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    grid-column-end: 7;
   }
 }
 
@@ -380,7 +386,6 @@ input[type=text]::placeholder {
 }
 
 .question h2 {
-  font-size: 40px;
   font-size: 4rem;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
@@ -449,22 +454,36 @@ label:hover {
 
 @media (max-width: 1080px) {
   h2 {
-    font-size: 37px;
     font-size: 3.7rem;
   }
 }
 
 @media (max-width: 805px) {
   .question h2 {
-    font-size: 35px;
     font-size: 3.5rem;
     text-align: center;
   }
 }
 
+@media (max-width: 580px) {
+  .question form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .question form label {
+    max-width: 525px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .question .next {
+    width: 100%;
+  }
+}
+
 @media (max-width: 450px) {
   .question h2 {
-    font-size: 32px;
     font-size: 3.2rem;
   }
   .question form {
@@ -498,7 +517,6 @@ h3 {
   -ms-grid-column: 3;
   -ms-grid-column-span: 2;
   grid-area: 3 / 3 / 4 / 5;
-  font-size: 60px;
   font-size: 6rem;
   background-color: black;
 }
@@ -650,6 +668,16 @@ footer {
   font-size: 1rem;
 }
 
+.redo {
+  display: block;
+}
+
+@media (max-width: 580px) {
+  .result h3 {
+    font-size: 4rem;
+  }
+}
+
 span,
 h1,
 h2,
@@ -679,7 +707,6 @@ body {
   background-color: black;
   color: white;
   font-family: "Source Code Pro", monospace;
-  font-size: 20px;
   font-size: 2rem;
 }
 

@@ -126,7 +126,7 @@ footer {
 @media (max-width: 580px){
     .result {
         h3 {
-            @include font-size(40);
+            @include fontSize(40);
         }
     }
 }
