@@ -92,7 +92,7 @@ h3 {
 .aestheticP {
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
 }
 
 .aestheticV {
@@ -121,6 +121,7 @@ footer {
     display: block;
 }
 // Will come back to this it was 530 am
+
 
 
 @media (max-width: 580px){

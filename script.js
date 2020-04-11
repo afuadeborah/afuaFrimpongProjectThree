@@ -62,27 +62,29 @@ const aestheticScore = [];
 
 
 // Print the selections to each radio button
-            let formHtml = '';
+        let formHtml = '';
 
-            for (let i = 0; i < options.length; i++) {
-                formHtml += `
-                <input type='radio' name='option' value='${wave[i]}' id='${i}'>
-                    <label for='${i}' tabindex="0">
-                        <img src='${options[i]}'>
-                    </label>
-                </<input>`;
+        for (let i = 0; i < options.length; i++) {
+            formHtml += `
+            <input type='radio' name='option' value='${wave[i]}' id='${i}'>
+                <label for='${i}' tabindex="0">
+                    <img src='${options[i]}'>
+                </label>
+            </input>`;
 
-                $('.questionBox').html(formHtml);
-            }
+            $('.questionBox').html(formHtml);
+        }
 
     };
 
 
 //Grab the value of the question and do something
     function grabAestheticValue() {
+     
         const checked = $('input[type=radio]:checked');
         const selectedValue = $('input[type=radio]:checked').val();
 
+      
 
         if (selectedValue === 'grunge') {            
             aestheticScore.push(selectedValue);
@@ -92,9 +94,12 @@ const aestheticScore = [];
 
         } else if (selectedValue === 'pastel'){
             aestheticScore.push(selectedValue);
-        }
+        } 
+    
         
     };
+
+
 
 $(document).ready(function(){
 
@@ -108,12 +113,13 @@ $(document).ready(function(){
         
         if (waveName === ''){
             alert('Please enter a ~ wavename ~ to start the quiz.');
+    
 
         } else {
             $('.letsGo').html(`<p tabindex="0">surf's up, ${waveName}.</p>`);
         }
-
-        $('.question').show()
+        
+        $('.question').show();
         $('footer').hide();
         userName.val('');
 
@@ -130,8 +136,12 @@ $(document).ready(function(){
 
 // Next Question in Array
     nextButton.on('click', function(){
+
         grabAestheticValue();
+       
         currentQuestion++;
+
+        
 
 
         // in order to move to the next question, we have to make sure we're still within the array.length
@@ -200,9 +210,7 @@ $(document).ready(function(){
         };
     });
 
-    // $('.redo').on('click', function(){
 
-    // })
 
 
 
@@ -210,10 +218,7 @@ $(document).ready(function(){
 // Document Ready Scope
 
 
-// New options in case of double answers
-// pastel goth = pastel + grunge
-// Pastel + vaporwave = seapunk
-// vaporwave + grunge = ocean grunge
+
 
 
 

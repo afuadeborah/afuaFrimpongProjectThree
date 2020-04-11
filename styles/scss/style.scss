@@ -5,7 +5,7 @@
 @import 'resultBox';
 
 
-//Strip Club
+
 span,
 h1,
 h2,
@@ -50,7 +50,7 @@ header,
 
 
 button,
-#startWave,
+input[type=submit],
 .redo {
     background-color: $vaporGold;
     border: 2px solid $vaporGold;
@@ -60,18 +60,21 @@ button,
 
 
 button,
-#startWave,
-.redo ,
+input[type=submit],
+.redo,
 h1,
-h3 {
-    
+h2,
+h3,
+.letsGo p {
+    font-family: $arialFont;
+    font-style: italic;
     text-transform: uppercase;
 }
 
 header,
+input[type=text],
 input[type=text]::placeholder,
 h3 {
     text-align: center;
 }
 
-// USE FOCUS-WITHIN

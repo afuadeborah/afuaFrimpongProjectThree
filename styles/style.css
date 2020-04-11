@@ -206,7 +206,6 @@ header {
 }
 
 .welcome h1 {
-  font-family: "Roboto Mono", monospace;
   font-size: 8.5rem;
   margin-bottom: 20px;
   -ms-grid-row: 1;
@@ -217,12 +216,21 @@ header {
   padding: 20px;
 }
 
-.welcome span:first-of-type {
+.welcome span {
   -ms-grid-row: 3;
   -ms-grid-row-span: 1;
   -ms-grid-column: 3;
   -ms-grid-column-span: 3;
   grid-area: 3 / 3 / 4 / 6;
+}
+
+.welcome span:nth-of-type(2) {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 3;
+  grid-area: 3 / 3 / 4 / 6;
+  margin-top: 35px;
 }
 
 .welcome form {
@@ -240,13 +248,33 @@ header {
           flex-direction: column;
 }
 
-.welcome form #waveName {
+.welcome form input[type=text] {
   padding: 10px 50px;
   margin-bottom: 20px;
 }
 
-.welcome form #startWave {
+.welcome form input[type=text]::-webkit-input-placeholder {
+  letter-spacing: 8px;
+}
+
+.welcome form input[type=text]:-ms-input-placeholder {
+  letter-spacing: 8px;
+}
+
+.welcome form input[type=text]::-ms-input-placeholder {
+  letter-spacing: 8px;
+}
+
+.welcome form input[type=text]::placeholder {
+  letter-spacing: 8px;
+}
+
+.welcome form input[type=submit] {
   padding: 10px 30px;
+  width: 80%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .letsGo {
@@ -301,7 +329,7 @@ input[type=text]::placeholder {
         grid-column-start: 2;
     grid-column-end: 7;
   }
-  .welcome form #waveName {
+  .welcome form input[type=text] {
     padding: 10px 0;
   }
   .letsGo {
@@ -376,41 +404,30 @@ input[type=text]::placeholder {
 }
 
 .question {
-  display: -ms-grid;
-  display: grid;
   display: none;
-  -ms-grid-columns: (1fr)[8];
-      grid-template-columns: repeat(8, 1fr);
-  -ms-grid-rows: (1fr)[4];
-      grid-template-rows: repeat(4, 1fr);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .question h2 {
   font-size: 4rem;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 8;
-  grid-area: 1 / 1 / 2 / 9;
   padding: 50px 0;
   font-weight: bold;
   margin-top: 20px;
 }
 
-.question .questionBox {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 6;
-  grid-area: 2 / 2 / 4 / 8;
-}
-
 .question .next {
-  -ms-grid-row: 4;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 4;
-  -ms-grid-column-span: 2;
-  grid-area: 4 / 4 / 5 / 6;
   height: 50px;
   margin-top: 40px;
   padding: 0 40px;
@@ -644,7 +661,7 @@ h3 {
 .aestheticP {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
 }
 
 .aestheticV {
@@ -706,7 +723,7 @@ img {
 body {
   background-color: black;
   color: white;
-  font-family: "Source Code Pro", monospace;
+  font-family: "Questrial", sans-serif;
   font-size: 2rem;
 }
 
@@ -717,7 +734,7 @@ header,
 }
 
 button,
-#startWave,
+input[type=submit],
 .redo {
   background-color: #ffa818;
   border: 2px solid #ffa818;
@@ -726,32 +743,40 @@ button,
 }
 
 button,
-#startWave,
+input[type=submit],
 .redo,
 h1,
-h3 {
+h2,
+h3,
+.letsGo p {
+  font-family: "Arial", sans-serif;
+  font-style: italic;
   text-transform: uppercase;
 }
 
 header,
+input[type=text],
 input[type=text]::-webkit-input-placeholder,
 h3 {
   text-align: center;
 }
 
 header,
+input[type=text],
 input[type=text]:-ms-input-placeholder,
 h3 {
   text-align: center;
 }
 
 header,
+input[type=text],
 input[type=text]::-ms-input-placeholder,
 h3 {
   text-align: center;
 }
 
 header,
+input[type=text],
 input[type=text]::placeholder,
 h3 {
   text-align: center;
