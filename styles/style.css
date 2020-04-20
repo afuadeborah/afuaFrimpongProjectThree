@@ -197,48 +197,6 @@ header {
 }
 
 .welcome {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[7];
-      grid-template-columns: repeat(7, 1fr);
-  -ms-grid-rows: (1fr)[7];
-      grid-template-rows: repeat(7, 1fr);
-}
-
-.welcome h1 {
-  font-size: 8.5rem;
-  margin-bottom: 20px;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 7;
-  grid-area: 1 / 1 / 3 / 8;
-  padding: 20px;
-}
-
-.welcome span {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 3;
-  grid-area: 3 / 3 / 4 / 6;
-}
-
-.welcome span:nth-of-type(2) {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 3;
-  grid-area: 3 / 3 / 4 / 6;
-  margin-top: 35px;
-}
-
-.welcome form {
-  -ms-grid-row: 4;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 3;
-  grid-area: 4 / 3 / 6 / 6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -246,66 +204,28 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.welcome form input[type=text] {
-  padding: 10px 50px;
-  margin-bottom: 20px;
+.welcome h1 {
+  font-size: 8.5rem;
 }
 
-.welcome form input[type=text]::-webkit-input-placeholder {
-  letter-spacing: 8px;
+.welcome p {
+  font-size: 3rem;
+  letter-spacing: 5px;
+  margin: 25px auto;
 }
 
-.welcome form input[type=text]:-ms-input-placeholder {
-  letter-spacing: 8px;
-}
-
-.welcome form input[type=text]::-ms-input-placeholder {
-  letter-spacing: 8px;
-}
-
-.welcome form input[type=text]::placeholder {
-  letter-spacing: 8px;
-}
-
-.welcome form input[type=submit] {
-  padding: 10px 30px;
-  width: 80%;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
-.letsGo {
-  -ms-grid-row: 6;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 3;
-  grid-area: 6 / 3 / 8 / 6;
-}
-
-.letsGo p {
-  font-size: 3.5rem;
-  margin: 30px 0;
-  background-color: black;
-  padding: 20px;
-}
-
-input[type=text]::-webkit-input-placeholder {
-  font-size: 2.5rem;
-}
-
-input[type=text]:-ms-input-placeholder {
-  font-size: 2.5rem;
-}
-
-input[type=text]::-ms-input-placeholder {
-  font-size: 2.5rem;
-}
-
-input[type=text]::placeholder {
-  font-size: 2.5rem;
+.welcome button {
+  height: 50px;
+  width: 250px;
+  border-radius: 2px;
 }
 
 @media (max-width: 805px) {
@@ -703,6 +623,7 @@ button,
 form {
   margin: 0;
   padding: 0;
+  border: none;
 }
 
 html {
@@ -711,6 +632,7 @@ html {
 
 img {
   width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -721,10 +643,10 @@ img {
 }
 
 body {
+  font-size: 2rem;
   background-color: black;
   color: white;
-  font-family: "Questrial", sans-serif;
-  font-size: 2rem;
+  font-family: "Arial", sans-serif;
 }
 
 header,
@@ -737,7 +659,6 @@ button,
 input[type=submit],
 .redo {
   background-color: #ffa818;
-  border: 2px solid #ffa818;
   font-weight: bolder;
   letter-spacing: 2px;
 }
@@ -749,7 +670,6 @@ h1,
 h2,
 h3,
 .letsGo p {
-  font-family: "Arial", sans-serif;
   font-style: italic;
   text-transform: uppercase;
 }

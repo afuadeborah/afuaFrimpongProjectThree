@@ -16,9 +16,8 @@
 
 
 // Fonts
-    // $robotoFont: 'Roboto Mono', monospace;
-    $arialFont: 'Arial', sans-serif;
-    $bodyFont: 'Questrial', sans-serif;
+    $bodyFont: 'Arial', sans-serif;
+
 
     @mixin fontSize($sizeValue) {
     font-size: ($sizeValue/10) * 1rem;

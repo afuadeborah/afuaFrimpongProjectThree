@@ -14,6 +14,7 @@ button,
 form {
     margin: 0;
     padding: 0;
+    border: none;
 }
 
 
@@ -24,6 +25,7 @@ html {
 
 img {
     width: 100%;
+    height: auto;
     display: block;
 }
 
@@ -35,10 +37,10 @@ img {
 
 
 body {
+    @include fontSize(20);
     background-color: black;
     color: white;
     font-family: $bodyFont;
-    @include fontSize(20);
 }
 
 
@@ -53,7 +55,6 @@ button,
 input[type=submit],
 .redo {
     background-color: $vaporGold;
-    border: 2px solid $vaporGold;
     font-weight: bolder;
     letter-spacing: 2px;
 }
@@ -66,7 +67,6 @@ h1,
 h2,
 h3,
 .letsGo p {
-    font-family: $arialFont;
     font-style: italic;
     text-transform: uppercase;
 }
