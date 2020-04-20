@@ -228,101 +228,6 @@ header {
   border-radius: 2px;
 }
 
-@media (max-width: 805px) {
-  .welcome h1 {
-    font-size: 7rem;
-  }
-  .welcome input[type=text]::-webkit-input-placeholder {
-    font-size: 2rem;
-  }
-  .welcome input[type=text]:-ms-input-placeholder {
-    font-size: 2rem;
-  }
-  .welcome input[type=text]::-ms-input-placeholder {
-    font-size: 2rem;
-  }
-  .welcome input[type=text]::placeholder {
-    font-size: 2rem;
-  }
-  .welcome span:first-of-type {
-    -ms-grid-column: 2;
-        grid-column-start: 2;
-    grid-column-end: 7;
-  }
-  .welcome form input[type=text] {
-    padding: 10px 0;
-  }
-  .letsGo {
-    -ms-grid-column: 2;
-        grid-column-start: 2;
-    grid-column-end: 7;
-  }
-}
-
-@media (max-width: 670px) {
-  .welcome h1 {
-    font-size: 6rem;
-    text-align: center;
-    margin-bottom: 0;
-    padding: 0;
-  }
-}
-
-@media (max-width: 450px) {
-  .welcome h1 {
-    font-size: 4.5rem;
-  }
-  .welcome span:first-of-type {
-    -ms-grid-column: 1;
-        grid-column-start: 1;
-    grid-column-end: 8;
-    font-size: 1.5rem;
-  }
-  .welcome form {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-grid-column: 2;
-        grid-column-start: 2;
-    grid-column-end: 7;
-  }
-  input[type=text]::-webkit-input-placeholder {
-    font-size: 1.4rem;
-    padding: 0;
-  }
-  input[type=text]:-ms-input-placeholder {
-    font-size: 1.4rem;
-    padding: 0;
-  }
-  input[type=text]::-ms-input-placeholder {
-    font-size: 1.4rem;
-    padding: 0;
-  }
-  input[type=text]::placeholder {
-    font-size: 1.4rem;
-    padding: 0;
-  }
-  .letsGo p {
-    font-size: 2.5rem;
-    margin: unset;
-  }
-}
-
-@media (max-width: 400px) {
-  .welcome span:first-of-type {
-    font-size: 1.3rem;
-  }
-  .welcome form {
-    -ms-grid-column: 2;
-        grid-column-start: 2;
-    grid-column-end: 6;
-  }
-}
-
-.question img {
-  height: 300px;
-}
-
 .question {
   display: none;
   display: -webkit-box;
@@ -340,11 +245,14 @@ header {
           align-items: center;
 }
 
+.question img {
+  height: 300px;
+}
+
 .question h2 {
   font-size: 4rem;
   padding: 50px 0;
   font-weight: bold;
-  margin-top: 20px;
 }
 
 .question .next {
@@ -599,12 +507,6 @@ h3 {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../quizAssets/pastel-pic.jpg);
 }
 
-footer {
-  background-color: #000000;
-  text-align: center;
-  font-size: 1rem;
-}
-
 .redo {
   display: block;
 }
@@ -645,8 +547,16 @@ img {
 body {
   font-size: 2rem;
   background-color: black;
-  color: white;
   font-family: "Arial", sans-serif;
+}
+
+body,
+a {
+  color: white;
+}
+
+a {
+  text-decoration: none;
 }
 
 header,
@@ -656,7 +566,6 @@ header,
 }
 
 button,
-input[type=submit],
 .redo {
   background-color: #ffa818;
   font-weight: bolder;
@@ -664,40 +573,20 @@ input[type=submit],
 }
 
 button,
-input[type=submit],
 .redo,
 h1,
 h2,
-h3,
-.letsGo p {
+h3 {
   font-style: italic;
   text-transform: uppercase;
 }
 
 header,
-input[type=text],
-input[type=text]::-webkit-input-placeholder,
 h3 {
   text-align: center;
 }
 
-header,
-input[type=text],
-input[type=text]:-ms-input-placeholder,
-h3 {
-  text-align: center;
-}
-
-header,
-input[type=text],
-input[type=text]::-ms-input-placeholder,
-h3 {
-  text-align: center;
-}
-
-header,
-input[type=text],
-input[type=text]::placeholder,
-h3 {
+footer {
+  background-color: #000000;
   text-align: center;
 }

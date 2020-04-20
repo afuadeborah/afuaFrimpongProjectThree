@@ -39,8 +39,17 @@ img {
 body {
     @include fontSize(20);
     background-color: black;
-    color: white;
     font-family: $bodyFont;
+}
+
+body,
+a {
+    color: white;  
+     
+}
+
+a {
+    text-decoration: none;
 }
 
 
@@ -52,7 +61,6 @@ header,
 
 
 button,
-input[type=submit],
 .redo {
     background-color: $vaporGold;
     font-weight: bolder;
@@ -61,20 +69,20 @@ input[type=submit],
 
 
 button,
-input[type=submit],
 .redo,
 h1,
 h2,
-h3,
-.letsGo p {
+h3 {
     font-style: italic;
     text-transform: uppercase;
 }
 
 header,
-input[type=text],
-input[type=text]::placeholder,
 h3 {
     text-align: center;
 }
 
+footer {
+    background-color: $black;
+    text-align: center;
+}
