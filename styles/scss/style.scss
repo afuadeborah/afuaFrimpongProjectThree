@@ -38,13 +38,13 @@ img {
 
 body {
     @include fontSize(20);
-    background-color: black;
+    background-color: $black;
     font-family: $bodyFont;
 }
 
 body,
 a {
-    color: white;  
+    color: $white;  
      
 }
 
@@ -62,7 +62,7 @@ header,
 
 button,
 .redo {
-    background-color: $vaporGold;
+    background-color: $vaporAccent;
     font-weight: bolder;
     letter-spacing: 2px;
 }
@@ -81,6 +81,11 @@ header,
 h3 {
     text-align: center;
 }
+
+.question {
+    display: none;
+}
+
 
 footer {
     background-color: $black;

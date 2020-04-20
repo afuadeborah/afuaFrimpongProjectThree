@@ -229,7 +229,6 @@ header {
 }
 
 .question {
-  display: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -584,6 +583,10 @@ h3 {
 header,
 h3 {
   text-align: center;
+}
+
+.question {
+  display: none;
 }
 
 footer {

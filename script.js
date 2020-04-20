@@ -80,11 +80,7 @@ const aestheticScore = [];
 
 //Grab the value of the question and do something
     function grabAestheticValue() {
-     
-        const checked = $('input[type=radio]:checked');
         const selectedValue = $('input[type=radio]:checked').val();
-
-      
 
         if (selectedValue === 'grunge') {            
             aestheticScore.push(selectedValue);
@@ -103,22 +99,9 @@ const aestheticScore = [];
 
 $(document).ready(function(){
 
-//Username Creation and Beginning of Quiz
-    $('#startWave').on('click', function(e){
-        e.preventDefault();
-        const userName = $('#waveName');
-        
-
-        let waveName = userName.val();
-        
-        if (waveName === ''){
-            alert('Please enter a ~ wavename ~ to start the quiz.');
-    
-
-        } else {
-            $('.letsGo').html(`<p tabindex="0">surf's up, ${waveName}.</p>`);
-        }
-        
+// Beginning of Quiz
+    $('#startWave').on('click', function(){
+   
         $('.question').show();
         $('footer').hide();
         userName.val('');
@@ -129,7 +112,7 @@ $(document).ready(function(){
     printQuestion();
 
 // Proceed to the next question in the array, if we hit the last question go to results, if not display the next question
-//Bounce an alert if there wasn't an option checked 
+// Bounce an alert if there wasn't an option checked 
     
     const nextButton = $('.next');
 
@@ -209,9 +192,6 @@ $(document).ready(function(){
             });
         };
     });
-
-
-
 
 
 });
