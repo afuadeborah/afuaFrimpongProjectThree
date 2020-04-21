@@ -31,7 +31,7 @@ h3 {
 }
 
 .aestheticV .glitch:before,
-.aestheticV.glitch:after {
+.aestheticV .glitch:after {
     @include glitch('Vaporwave')
 }
 
@@ -43,6 +43,11 @@ h3 {
 .aestheticP .glitch:before,
 .aestheticP .glitch:after {
     @include glitch('Pastel');
+}
+
+.aestheticB .glitch:before,
+.aestheticB .glitch:after {
+    @include glitch('Baddie');
 }
 
 .glitch {
@@ -89,7 +94,8 @@ h3 {
 
 .aestheticV,
 .aestheticG,
-.aestheticP {
+.aestheticP,
+.aestheticB {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -105,9 +111,12 @@ h3 {
 
 }
 
-
 .aestheticP {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../quizAssets/pastel-pic.jpg);
+}
+
+.aestheticB {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../quizAssets/b-result.jpg);
 }
 
 

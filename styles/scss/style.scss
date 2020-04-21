@@ -90,4 +90,9 @@ h3 {
 footer {
     background-color: $black;
     text-align: center;
+
+    a {
+        @include fontSize(16);
+        font-style: italic;
+    }
 }
