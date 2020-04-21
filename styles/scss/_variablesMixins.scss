@@ -3,29 +3,11 @@
     $white: #FFFFFF;
 
 
-//Pastel Colours
-    $pastelPeach: #FFDDD1;
-    $pastelPink: #F0C9D7;
-    $pastelPurple: #D4C2E1;
-    $pastelBlue: #BDD7EA;
-
-
-// https://www.color-hex.com/color-palette/22262
-
-// Goth Colours
-    $grungeBlue: #0f005b;
-    $grungePurple: #2e0059;
-    $grungeRed: #5b0000;
-    $grungeGreen: #003300;
-
-// https://www.color-hex.com/color-palette/34369
-
 
 // Vapor Colours
-    $vaporGold: #ffa818;
-    $vaporOrange: #f06000;
-    $vaporPink:#f00078;
-    $vaporPurple: #a800c0;
+    $vaporAccent: #ffa818;
+    $vaporFocus: #f06000;
+    $vaporHove:#f00078;
 
 
 // https://www.houstonwinefest.com/twilight-sunset-color-palette-2/
@@ -33,11 +15,10 @@
 
 
 // Fonts
-    $robotoFont: 'Roboto Mono', monospace;
-    $bodyFont: 'Source Code Pro', monospace;
+    $bodyFont: 'Arial', sans-serif;
+
 
     @mixin fontSize($sizeValue) {
-    font-size: $sizeValue * 1px;
     font-size: ($sizeValue/10) * 1rem;
 }
 
@@ -60,4 +41,4 @@
             opacity: .8;
     }
 
-    // @mixin flex()
+

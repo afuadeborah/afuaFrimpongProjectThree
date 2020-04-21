@@ -1,7 +1,7 @@
 // Aesthetic Conatiner
 .result,
 .redo {
-    display:none;
+    display: none;
 }
 
 .result {
@@ -92,7 +92,7 @@ h3 {
 .aestheticP {
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
 }
 
 .aestheticV {
@@ -110,11 +110,23 @@ h3 {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../quizAssets/pastel-pic.jpg);
 }
 
-footer {
-    background-color: $black;
-    text-align: center;
-    font-size: 1rem;
+
+.redo {
+    display: block;
 }
+
+
+
+
+@media (max-width: 580px){
+    .result {
+        h3 {
+            @include fontSize(40);
+        }
+    }
+}
+
+
 
 // Glitch Effect Credit
 // https://codepen.io/ihatetomatoes/pen/8a16e11e6d6206f5eb1ed7a37fbbe1dc

@@ -4,51 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ride the Wave</title>
     <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Source+Code+Pro&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="./styles/style.css">
-    <title>Ride the Wave</title>
+    
 </head>
 
 
 <header>
-    <div class="welcome wrapper">
+    <div class="wrapper">
+        <section class="welcome">
+            
             <h1 tabindex="0">Ride the Wave</h1>
-            <span tabindex="0">What's your a e s t h e t i c?</span>
-        <form action="">
-            <input type="text" name="" id="waveName" placeholder="e n t e r n a m e">
-            <input type="submit" id="startWave" value="Let's Go">
-        </form>
-        <div class="letsGo" role="status">
-            <!-- add here -->
-        </div>
-    </div>
+            <p>What's your aesthetic?</p> 
+            <button type="submit" id="startWave">Surf's Up</button>
+            
+        </section>
+    </div>  
 </header>
     
 <body>
-    <!-- grid the main section and flex inner items -->
+    <div class="wrapper">
+        <section class="question">
+            <h2 tabindex="0"></h2>
+            <form action="" class="questionBox">
 
-    <div class="question wrapper">
-        <h2 tabindex="0" role="status"></h2>
-        <form action="" class="questionBox" role="status">
+            </form>
+            <button class="next">Next</button>
+        </section>
 
 
-        </form>
+        <section class="result">
 
-        <button class="next">Next</button>
+            
+            <button class="redo">Ride the Wave Again</button>
+        </section>
+
     </div>
-
-    <div class="result" role="status">
-
-        
-    </div>
-    <!-- <button class="redo">Ride the Wave Again</button> -->
-
     
     
+    <footer>
+        <p>
+            <a href="http://www.afuadeborahcodes.com/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            tabIndex="0">Afua Deborah</a>
+
+            Juno College 2020
+        </p>
+    </footer>
+    
+
     <!-- JQuery here -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="./script.js"></script>
@@ -62,4 +74,4 @@
 <!-------- Credits ---------->
 <!-- Lots of credit to this codepen: https://codepen.io/rashidnaushad/pen/VaKMBJ?editors=1010 for help solidify concepts and
 devise a flow! -->
-<!-- Shoutout to Lucas N for assistance with my categories! The realest! -->
+<!-- Shoutout to Lucas N for assistance with my categories! -->

@@ -1,31 +1,22 @@
-
-.question img {
-    height: 300px;
-}
-
-
 // Question Container
 .question {
-    display: grid;
-    display: none;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
+    img {
+        height: 300px;
+    }
     
     h2 { 
         @include fontSize(40);
-        grid-area: 1 / 1 / 2 / 9; 
         padding: 50px 0;
         font-weight: bold;
-        margin-top: 20px;
-    }
-
-    .questionBox { 
-        grid-area: 2 / 2 / 4 / 8; 
+       
     }
 
     .next{ 
-        grid-area: 4 / 4 / 5 / 6; 
         height: 50px;
         margin-top: 40px;
         padding: 0 40px
@@ -49,16 +40,12 @@ input[type=text]:focus,
 input[type=submit]:focus,
 label:focus, 
 button:focus{
-    outline: 2px solid $vaporOrange;
+    outline: 2px solid $vaporFocus;
 }
 
 label:hover{
-    border: 3px solid $vaporPink;
+    border: 3px solid $vaporHover;
 }
-
-
-// **Having a hard time getting the label to stay outlined when clicked**
-
 
 .questionBox {
     display: flex;
@@ -100,9 +87,10 @@ label:hover{
             }
         }
 
-       .next {
-        width: 100%;
+        .next {
+            width: 100%;
         }
+
     }
 }
 
@@ -121,7 +109,8 @@ label:hover{
 
     }
 
-
-
 }
 
+
+
+// Create a bpoint at 970 for the square sizes

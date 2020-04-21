@@ -62,31 +62,27 @@ const aestheticScore = [];
 
 
 // Print the selections to each radio button
-            let formHtml = '';
+        let formHtml = '';
 
-            for (let i = 0; i < options.length; i++) {
-                formHtml += `
-                <input type='radio' name='option' value='${wave[i]}' id='${i}'>
-                    <label for='${i}' tabindex="0">
-                        <img src='${options[i]}'>
-                    </label>
-                </<input>`;
+        for (let i = 0; i < options.length; i++) {
+            formHtml += `
+            <input type='radio' name='option' value='${wave[i]}' id='${i}'>
+                <label for='${i}' tabindex="0">
+                    <img src='${options[i]}'>
+                </label>
+            </input>`;
 
-                $('.questionBox').html(formHtml);
-            }
+            $('.questionBox').html(formHtml);
+        }
 
     };
 
 
 //Grab the value of the question and do something
     function grabAestheticValue() {
-        const checked = $('input[type=radio]:checked');
         const selectedValue = $('input[type=radio]:checked').val();
-        console.log(selectedValue);
 
-        if (selectedValue === 'grunge') {
-            console.log('clicked g')
-            
+        if (selectedValue === 'grunge') {            
             aestheticScore.push(selectedValue);
 
         } else if (selectedValue === 'vapor') {
@@ -94,30 +90,19 @@ const aestheticScore = [];
 
         } else if (selectedValue === 'pastel'){
             aestheticScore.push(selectedValue);
-        }
-        console.log(aestheticScore);
+        } 
+    
         
     };
 
+
+
 $(document).ready(function(){
 
-//Username Creation and Beginning of Quiz
-    $('#startWave').on('click', function(e){
-        e.preventDefault();
-        const userName = $('#waveName');
-        
-        // make this a local variable since I only need it here
-        let waveName = userName.val();
-        
-        if (waveName === ''){
-            alert('Please enter a ~ wavename ~ to start the quiz.');
-
-        } else {
-            $('.letsGo').html(`<p tabindex="0">surf's up, ${waveName}.</p>`);
-            console.log(waveName);
-        }
-
-        $('.question').show()
+// Beginning of Quiz
+    $('#startWave').on('click', function(){
+   
+        $('.question').show();
         $('footer').hide();
         userName.val('');
 
@@ -127,15 +112,19 @@ $(document).ready(function(){
     printQuestion();
 
 // Proceed to the next question in the array, if we hit the last question go to results, if not display the next question
-//Bounce an alert if there wasn't an option checked 
+// Bounce an alert if there wasn't an option checked 
     
     const nextButton = $('.next');
 
 
 // Next Question in Array
     nextButton.on('click', function(){
+
         grabAestheticValue();
+       
         currentQuestion++;
+
+        
 
 
         // in order to move to the next question, we have to make sure we're still within the array.length
@@ -173,9 +162,6 @@ $(document).ready(function(){
                 const grungeLength = grungeScore.length;
                 const pastelLength = pastelScore.length;
                 
-                console.log(vaporLength);
-                console.log(grungeLength);
-                console.log(pastelLength);
                 
                 if(vaporLength > grungeLength && vaporLength > pastelLength){
                     let HtmlToAppend = `
@@ -207,20 +193,12 @@ $(document).ready(function(){
         };
     });
 
-    // $('.redo').on('click', function(){
-
-    // })
-
-
 
 });
 // Document Ready Scope
 
 
-// New options in case of double answers
-// pastel goth = pastel + grunge
-// Pastel + vaporwave = seapunk
-// vaporwave + grunge = ocean grunge
+
 
 
 
