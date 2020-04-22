@@ -253,8 +253,8 @@ header {
 
 .question .option-container {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 calc(50% - 40px);
-          flex: 1 0 calc(50% - 40px);
+      -ms-flex: 1 0 calc(25% - 40px);
+          flex: 1 0 calc(25% - 40px);
   width: 20%;
 }
 
@@ -266,27 +266,17 @@ header {
   margin-right: 20px;
 }
 
-.question .option-container label {
-  height: 300px;
-}
-
 .question h2 {
   font-size: 4rem;
   padding: 50px 0;
   font-weight: bold;
 }
 
-.question button {
-  height: 50px;
-  margin-top: 40px;
-  padding: 0 40px;
-}
-
 input[type=checkbox] {
   opacity: 0;
+  visibility: hidden;
 }
 
-input[type=checkbox]:focus,
 input[type=submit]:focus,
 label:focus,
 button:focus {
@@ -318,37 +308,25 @@ button:focus {
     font-size: 3.5rem;
     text-align: center;
   }
-  .question .option-container:nth-of-type(2) {
-    margin: 0 0 0 20px;
-  }
-}
-
-@media (max-width: 580px) {
-  .question form label {
-    max-width: 525px;
-    width: 80%;
-    margin: 0 auto;
-  }
-  .question form .option-container {
+  .question .option-container {
     -webkit-box-flex: 1;
         -ms-flex: 1 0 calc(50% - 40px);
             flex: 1 0 calc(50% - 40px);
     width: 45%;
   }
+  .question .option-container:nth-of-type(2) {
+    margin: 0 0 0 20px;
+  }
   .question .next {
-    width: 70%;
+    width: 50%;
+    position: relative;
+    left: 25%;
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 630px) {
   .question h2 {
     font-size: 3.2rem;
-  }
-  .question form {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
   }
 }
 
@@ -537,10 +515,6 @@ h3 {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../quizAssets/b-result.jpg);
 }
 
-.redo {
-  display: block;
-}
-
 @media (max-width: 580px) {
   .result h3 {
     font-size: 4rem;
@@ -595,15 +569,16 @@ header,
   height: 100vh;
 }
 
-button,
-.redo {
+button {
   background-color: #ffa818;
   font-weight: bolder;
   letter-spacing: 2px;
+  height: 50px;
+  margin-top: 40px;
+  padding: 0 40px;
 }
 
 button,
-.redo,
 h1,
 h2,
 h3 {
@@ -616,7 +591,8 @@ h3 {
   text-align: center;
 }
 
-.question {
+.question,
+.redo {
   display: none;
 }
 

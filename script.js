@@ -72,11 +72,11 @@ const aestheticScore = [];
 
         for (let i = 0; i < options.length; i++) {
             formHtml += `
-            <div class="option-container" tabindex="0">
+            <div class="option-container">
 
-                <input type="checkbox" name="option" value="${wave[i]}" id="${i}">
+                <input type="checkbox" name="option" value="${wave[i]}" id="${i}" required>
 
-                    <label for='${i}'>
+                    <label for='${i}' tabindex="0">
 
                         <img src='${options[i]}'>
 
@@ -89,6 +89,8 @@ const aestheticScore = [];
             $('.questionBox').html(formHtml);
         }
 
+        checkedSelection();
+        
     };
 
 
@@ -112,6 +114,26 @@ const aestheticScore = [];
     };
 
 
+// Start Over
+    function startOver() {
+      
+        // Will continue here
+    }
+
+// Error Handling
+    function checkedSelection(){
+        const selected = $("input[type='checkbox']");
+
+        selected.on('click', function(){
+            if ($(this).prop('checked') === false) {
+
+                console.log("unchecked, no option");
+                alert("please make a selection");
+
+            } 
+        })
+    }
+
 
 $(document).ready(function(){
 
@@ -120,6 +142,8 @@ $(document).ready(function(){
    
         $('.question').show();
         $('footer').hide();
+        $("input[type='checkbox']").prop('checked', false);
+        
 
     });
 
@@ -130,27 +154,24 @@ $(document).ready(function(){
 // Bounce an alert if there wasn't an option checked 
     
     const nextButton = $('.next');
-    const radioCheck = $("input[type='checkbox']:checked");
+    const checkbox = $("input[type='checkbox']:checked").prop('checked', true);
 
 
 // Next Question in Array
     nextButton.on('click', function(e){
+        
+
         e.preventDefault();
         grabAestheticValue();
 
-        //  If there hasn't been an option selected, I need an error here
-       
-
-            currentQuestion++;
-
-       
-
-        
+   
+        currentQuestion++;
 
 
         // in order to move to the next question, we have to make sure we're still within the array.length
         if (currentQuestion < quizQuestions.length){
             // keep going
+
             printQuestion();
             
         } 
@@ -220,7 +241,8 @@ $(document).ready(function(){
                 $('.question').hide();
                 $('header').hide();
                 $('.result').show();
-                $('.footer').show();
+                $('footer').show();
+                $('.redo').css('display', 'block');
                 
             });
         };
