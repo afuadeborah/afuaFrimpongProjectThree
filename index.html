@@ -16,53 +16,54 @@
         
     </head>
 
-
-    <header>
-        <div class="wrapper">
-            <section class="welcome">
-                
-                <h1 tabindex="0">Ride the Wave</h1>
-                <p>What's your aesthetic?</p> 
-                <button type="submit" id="startWave">Surf's Up</button>
-                
-            </section>
-        </div>  
-    </header>
+<!-- Landing/Intro Page -->
+<header>
+    <div class="wrapper">
+        <section class="welcome">
+            
+            <h1 tabindex="0">Ride the Wave</h1>
+            <p>What's your aesthetic?</p> 
+            <button type="submit" id="startWave">Surf's Up</button>
+            
+        </section>
+    </div>  
+</header>
     
-    <body>
-        <div class="wrapper">
-            <section class="question">
-                <h2 tabindex="0"></h2>
-                <form action="" class="questionBox">
-                    <!-- Dynamically add questions -->
-                </form>
-                <button class="next">Next</button>
-            </section>
+<body>
+    <!-- Question Section -->
+    <div class="wrapper">
+        <section class="question">
+            <h2 tabindex="0"></h2>
+            <form action="" class="questionBox" id="questionForm">
+                <!-- Questions added dynamically here -->
+            </form>
+            <button type="submit" class="next" form="questionForm">Next</button>
+        </section>
+    </div>
 
+    <!-- Quiz Result Section -->
+    <div class="wrapper">
+        <section class="result">
+            <!-- Results added dynamically here -->
+            
+        </section>
+        <button class="redo">Ride the Wave Again</button>
 
-            <section class="result">
-                <!-- Dynamically display result here -->
-                <button class="redo">Ride the Wave Again</button>
-            </section>
+    </div>
+    
+    
+    <footer>
+        <a href="http://www.afuadeborahcodes.com/" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        tabIndex="0">Afua Deborah Juno College 2020</a>   
+    </footer>
+    
 
-        </div>
-        
-        
-        <footer>
-
-            <a href="http://www.afuadeborahcodes.com/" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            tabIndex="0">Afua Deborah Juno College 2020</a>
-
-        </footer>
-        
-
-        <!-- JQuery here -->
-        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-        <script src="./script.js"></script>
-    </body>
-
+    <!-- Scripts Here -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="./script.js"></script>
+</body>
 </html>
 
 

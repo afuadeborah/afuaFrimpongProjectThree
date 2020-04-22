@@ -24,13 +24,21 @@ header {
         p { 
             @include fontSize(30);
             letter-spacing: 5px;
-            margin: 25px auto;
+            margin: 45px auto;
         }   
         
         button {
             height: 50px;
             width: 250px;
             border-radius: 2px;
+            margin-top: 6%;
+
+            &:active {
+                background-color: $black;
+                color: $vaporAccent;
+                border: 1px solid $vaporAccent;
+    
+            }
         }
 
 }

@@ -3,44 +3,50 @@ const quizQuestions = [
     {
         question: "Had to do it on 'em. Pick a pair of Vans.",
         choices: [
-            "./quizAssets/v-shoe.jpg", 
+            "./quizAssets/v-shoe.jpg",
+            "./quizAssets/b-shoe.jpg", 
             "./quizAssets/g-shoe.jpg", 
             "./quizAssets/p-shoe.jpg"],
-        categories: ["vapor", "grunge", "pastel"]
+        categories: ["vapor", "baddie", "grunge", "pastel"]
     },
     {
         question: "Congrats, you just signed a record deal! Pick your album cover design.",
         choices: [
             "./quizAssets/p-album.jpg", 
-            "./quizAssets/v-album.jpg", 
+            "./quizAssets/v-album.jpg",
+            "./quizAssets/b-album.jpg", 
             "./quizAssets/g-album.jpg"],
-        categories: ["pastel", "vapor", "grunge"]
+        categories: ["pastel", "vapor", "baddie", "grunge"]
     },
     {
         question: "You just turned 25. You're having a quarter-life crisis and MUST repaint your room. Pick a colour palette.",
         choices: [
             "./quizAssets/g-palette.png", 
             "./quizAssets/p-palette.png", 
-            "./quizAssets/v-palette.jpg"],
-        categories: ["grunge", "pastel", "vapor"]
+            "./quizAssets/v-palette.jpg",
+            "./quizAssets/b-palette.png"
+        ],
+        categories: ["grunge", "pastel", "vapor", "baddie"]
 
     },
     {
         question: "Fill in the blank. I wish I could go back to the ___: ",
         choices: [
+            "./quizAssets/b-year.jpg",
             "./quizAssets/v-year.png", 
             "./quizAssets/g-year.png", 
             "./quizAssets/p-year.jpg"],
-        categories: ["vapor", "grunge", "pastel"]
+        categories: ["baddie", "vapor", "grunge", "pastel"]
 
     },
     {
         question: "Time to get away. Pick a destination.",
         choices: [
+            "./quizAssets/b-vacation.jpg",
             "./quizAssets/p-vacation.jpg", 
             "./quizAssets/v-vacation.jpg", 
             "./quizAssets/g-vacation.jpg"],
-        categories: ["pastel", "vapor", "grunge"]
+        categories: ["baddie", "pastel", "vapor", "grunge"]
 
     }];
 
@@ -66,21 +72,31 @@ const aestheticScore = [];
 
         for (let i = 0; i < options.length; i++) {
             formHtml += `
-            <input type='radio' name='option' value='${wave[i]}' id='${i}'>
-                <label for='${i}' tabindex="0">
-                    <img src='${options[i]}'>
-                </label>
-            </input>`;
+            <div class="option-container">
+
+                <input type="checkbox" name="option" value="${wave[i]}" id="${i}" required>
+
+                    <label for='${i}' tabindex="0">
+
+                        <img src='${options[i]}'>
+
+                    </label>
+
+                </input>
+
+            </div>`;
 
             $('.questionBox').html(formHtml);
         }
 
+        checkedSelection();
+        
     };
 
 
 //Grab the value of the question and do something
     function grabAestheticValue() {
-        const selectedValue = $('input[type=radio]:checked').val();
+        const selectedValue = $("input[type='checkbox']:checked").val();
 
         if (selectedValue === 'grunge') {            
             aestheticScore.push(selectedValue);
@@ -90,11 +106,33 @@ const aestheticScore = [];
 
         } else if (selectedValue === 'pastel'){
             aestheticScore.push(selectedValue);
-        } 
-    
+
+        } else if (selectedValue === 'baddie'){
+            aestheticScore.push(selectedValue);
+        }
         
     };
 
+
+// Start Over
+    function startOver() {
+      
+        // Will continue here
+    }
+
+// Error Handling
+    function checkedSelection(){
+        const selected = $("input[type='checkbox']");
+
+        selected.on('click', function(){
+            if ($(this).prop('checked') === false) {
+
+                console.log("unchecked, no option");
+                alert("please make a selection");
+
+            } 
+        })
+    }
 
 
 $(document).ready(function(){
@@ -104,7 +142,8 @@ $(document).ready(function(){
    
         $('.question').show();
         $('footer').hide();
-        userName.val('');
+        $("input[type='checkbox']").prop('checked', false);
+        
 
     });
 
@@ -115,21 +154,24 @@ $(document).ready(function(){
 // Bounce an alert if there wasn't an option checked 
     
     const nextButton = $('.next');
+    const checkbox = $("input[type='checkbox']:checked").prop('checked', true);
 
 
 // Next Question in Array
-    nextButton.on('click', function(){
-
-        grabAestheticValue();
-       
-        currentQuestion++;
-
+    nextButton.on('click', function(e){
         
+
+        e.preventDefault();
+        grabAestheticValue();
+
+   
+        currentQuestion++;
 
 
         // in order to move to the next question, we have to make sure we're still within the array.length
         if (currentQuestion < quizQuestions.length){
             // keep going
+
             printQuestion();
             
         } 
@@ -137,11 +179,13 @@ $(document).ready(function(){
 // On the last question we want that click to trigger the result 
         if (currentQuestion == quizQuestions.length - 1){
             
-            nextButton.on('click', function(){
+            nextButton.on('click', function(e){
+                e.preventDefault();
                 
                 let vaporScore = [];
                 let grungeScore = [];
                 let pastelScore = [];
+                let baddieScore = [];
 
                 for(let i = 0; i <= aestheticScore.length; i++){
                     const tallyScore = aestheticScore[i];
@@ -154,6 +198,9 @@ $(document).ready(function(){
                         
                     } else if (tallyScore === 'pastel'){
                         pastelScore.push(tallyScore);
+
+                    } else if (tallyScore === 'baddie'){
+                        baddieScore.push(tallyScore);
                     }
                 }
 
@@ -161,25 +208,32 @@ $(document).ready(function(){
                 const vaporLength = vaporScore.length;
                 const grungeLength = grungeScore.length;
                 const pastelLength = pastelScore.length;
+                const baddieLength = baddieScore.length;
                 
                 
-                if(vaporLength > grungeLength && vaporLength > pastelLength){
+                if(vaporLength > grungeLength && vaporLength > pastelLength && vaporLength > baddieLength){
                     let HtmlToAppend = `
                     <h3 class='aesthetic glitch' tabindex="0">VaporWave</h3>
                     `
                     $('.result').html(HtmlToAppend);
                     $('.result').addClass('aestheticV');
-                } else if (grungeLength > vaporLength && grungeLength > pastelLength){
+                } else if (grungeLength > vaporLength && grungeLength > pastelLength && grungeLength > baddieLength){
                     let HtmlToAppend = `
                     <h3 class='aesthetic glitch' tabindex="0">Grunge</dh3>
                     `
                     $('.result').addClass('aestheticG');
                     $('.result').html(HtmlToAppend);
-                } else {
+                } else if (pastelLength > vaporLength && pastelLength > grungeLength && pastelLength > baddieLength){
                     let HtmlToAppend = `
                     <h3 class='aesthetic glitch' tabindex="0">Pastel</h3>
                     `
                     $('.result').addClass('aestheticP');
+                    $('.result').html(HtmlToAppend);
+                } else if (baddieLength > vaporLength && baddieLength > grungeLength && baddieLength > pastelLength){
+                    let HtmlToAppend = `
+                    <h3 class='aesthetic glitch' tabindex="0">Baddie</h3>
+                    `
+                    $('.result').addClass('aestheticB');
                     $('.result').html(HtmlToAppend);
                 }
                             
@@ -187,7 +241,8 @@ $(document).ready(function(){
                 $('.question').hide();
                 $('header').hide();
                 $('.result').show();
-                $('.footer').show();
+                $('footer').show();
+                $('.redo').css('display', 'block');
                 
             });
         };
@@ -196,12 +251,3 @@ $(document).ready(function(){
 
 });
 // Document Ready Scope
-
-
-
-
-
-
-
-
-
