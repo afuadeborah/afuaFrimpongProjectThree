@@ -72,11 +72,11 @@ const aestheticScore = [];
 
         for (let i = 0; i < options.length; i++) {
             formHtml += `
-            <div class="option-container">
+            <div class="option-container" tabindex="0">
 
-                <input type="radio" name="option" value="${wave[i]}" id="${i}">
+                <input type="checkbox" name="option" value="${wave[i]}" id="${i}">
 
-                    <label for='${i}' tabindex="0">
+                    <label for='${i}'>
 
                         <img src='${options[i]}'>
 
@@ -94,7 +94,7 @@ const aestheticScore = [];
 
 //Grab the value of the question and do something
     function grabAestheticValue() {
-        const selectedValue = $('input[type=radio]:checked').val();
+        const selectedValue = $("input[type='checkbox']:checked").val();
 
         if (selectedValue === 'grunge') {            
             aestheticScore.push(selectedValue);
@@ -104,8 +104,10 @@ const aestheticScore = [];
 
         } else if (selectedValue === 'pastel'){
             aestheticScore.push(selectedValue);
-        } 
-    
+
+        } else if (selectedValue === 'baddie'){
+            aestheticScore.push(selectedValue);
+        }
         
     };
 
@@ -128,14 +130,20 @@ $(document).ready(function(){
 // Bounce an alert if there wasn't an option checked 
     
     const nextButton = $('.next');
+    const radioCheck = $("input[type='checkbox']:checked");
 
 
 // Next Question in Array
     nextButton.on('click', function(e){
         e.preventDefault();
         grabAestheticValue();
+
+        //  If there hasn't been an option selected, I need an error here
        
-        currentQuestion++;
+
+            currentQuestion++;
+
+       
 
         
 
@@ -169,6 +177,7 @@ $(document).ready(function(){
                         
                     } else if (tallyScore === 'pastel'){
                         pastelScore.push(tallyScore);
+
                     } else if (tallyScore === 'baddie'){
                         baddieScore.push(tallyScore);
                     }
@@ -199,7 +208,7 @@ $(document).ready(function(){
                     `
                     $('.result').addClass('aestheticP');
                     $('.result').html(HtmlToAppend);
-                } else {
+                } else if (baddieLength > vaporLength && baddieLength > grungeLength && baddieLength > pastelLength){
                     let HtmlToAppend = `
                     <h3 class='aesthetic glitch' tabindex="0">Baddie</h3>
                     `

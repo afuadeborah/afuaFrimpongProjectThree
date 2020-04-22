@@ -253,13 +253,17 @@ header {
 
 .question .option-container {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 calc(25% - 40px);
-          flex: 1 0 calc(25% - 40px);
+      -ms-flex: 1 0 calc(50% - 40px);
+          flex: 1 0 calc(50% - 40px);
   width: 20%;
 }
 
 .question .option-container:nth-of-type(2) {
   margin: 0px 20px;
+}
+
+.question .option-container:nth-of-type(3) {
+  margin-right: 20px;
 }
 
 .question .option-container label {
@@ -278,11 +282,11 @@ header {
   padding: 0 40px;
 }
 
-input[type=radio] {
+input[type=checkbox] {
   opacity: 0;
 }
 
-input[type=radio]:focus,
+input[type=checkbox]:focus,
 input[type=submit]:focus,
 label:focus,
 button:focus {
@@ -313,6 +317,9 @@ button:focus {
   .question h2 {
     font-size: 3.5rem;
     text-align: center;
+  }
+  .question .option-container:nth-of-type(2) {
+    margin: 0 0 0 20px;
   }
 }
 
@@ -345,8 +352,7 @@ button:focus {
   }
 }
 
-.result,
-.redo {
+.result {
   display: none;
 }
 
