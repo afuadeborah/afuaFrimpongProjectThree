@@ -89,7 +89,7 @@ const aestheticScore = [];
             $('.questionBox').html(formHtml);
         }
 
-        checkedSelection();
+        
         
     };
 
@@ -121,18 +121,18 @@ const aestheticScore = [];
     }
 
 // Error Handling
-    function checkedSelection(){
-        const selected = $("input[type='checkbox']");
+    // function checkedSelection(){
+    //     const selected = $("input[type='checkbox']");
 
-        selected.on('click', function(){
-            if ($(this).prop('checked') === false) {
+    //     selected.on('click', function(){
+    //         if ($(this).prop('checked') === false) {
 
-                console.log("unchecked, no option");
-                alert("please make a selection");
+    //             console.log("unchecked, no option");
+    //             alert("please make a selection");
 
-            } 
-        })
-    }
+    //         } 
+    //     })
+    // }
 
 
 $(document).ready(function(){
