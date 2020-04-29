@@ -117,22 +117,15 @@ const aestheticScore = [];
 // Start Over
     function startOver() {
       
-        // Will continue here
+        $('.redo').on('click', () => {
+            $('.result').hide();
+            $('header').show();
+            $('.redo').hide();
+        })
+    
+
     }
 
-// Error Handling
-    // function checkedSelection(){
-    //     const selected = $("input[type='checkbox']");
-
-    //     selected.on('click', function(){
-    //         if ($(this).prop('checked') === false) {
-
-    //             console.log("unchecked, no option");
-    //             alert("please make a selection");
-
-    //         } 
-    //     })
-    // }
 
 
 $(document).ready(function(){
@@ -248,6 +241,6 @@ $(document).ready(function(){
         };
     });
 
-
+    startOver();
 });
 // Document Ready Scope

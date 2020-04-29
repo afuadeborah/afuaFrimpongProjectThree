@@ -277,6 +277,7 @@ input[type=checkbox] {
   visibility: hidden;
 }
 
+input[type=checkbox]:focus,
 input[type=submit]:focus,
 label:focus,
 button:focus {
@@ -321,6 +322,7 @@ button:focus {
     width: 50%;
     position: relative;
     left: 25%;
+    margin-bottom: 30px;
   }
 }
 
@@ -515,9 +517,17 @@ h3 {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../quizAssets/b-result.jpg);
 }
 
+.redo {
+  margin: 30px auto;
+  width: 70%;
+}
+
 @media (max-width: 580px) {
   .result h3 {
     font-size: 4rem;
+  }
+  .result .redo {
+    font-size: 1.5rem;
   }
 }
 
