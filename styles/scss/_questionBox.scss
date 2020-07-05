@@ -35,16 +35,10 @@ input[type=checkbox]{
 }
 
 
-input[type=checkbox]:focus,
 input[type=submit]:focus,
-label:focus, 
+input[type=checkbox] img:focus, 
 button:focus{
     outline: 2px solid $vaporFocus;
-}
-
-// Chrome Rendering
-label:focus {
-    border: 2px solid $vaporFocus;
 }
 
 
