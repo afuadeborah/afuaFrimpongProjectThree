@@ -240,6 +240,6 @@ $(document).ready(function(){
         };
     });
 
-    startOver();
 });
+startOver();
 // Document Ready Scope
